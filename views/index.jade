@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='Cache-Control', content='no-cache')
+        meta(http-equiv='Pragma', content='no-cache')
+        meta(http-equiv='Expires', content='0')
+        title Cobit
+        script(src='/javascripts/codemirror-5.20.2/lib/codemirror.js')
+        script(src='/javascripts/codemirror-master/dist/emmet.js')
+        link(rel='stylesheet', href='/javascripts/codemirror-5.20.2/lib/codemirror.css')
+        script(src='/javascripts/codemirror-5.20.2/mode/javascript/javascript.js')
+        script(src='/javascripts/codemirror-5.20.2/mode/xml/xml.js')
+        script(src='/javascripts/codemirror-5.20.2/mode/css/css.js')
+        link(rel='stylesheet', href='/javascripts/codemirror-5.20.2/theme/neo.css')
+        link(rel='stylesheet', href='/javascripts/codemirror-5.20.2/theme/bespin.css')
+        script(src='/javascripts/codemirror-5.20.2/addon/hint/css-hint.js')
+        link(rel='stylesheet', href='/javascripts/codemirror-5.20.2/addon/hint/show-hint.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='/javascripts/jquery/jquery-3.1.1.min.js')
+        script(src='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js')
+        link(rel='stylesheet', href='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.css')
+        script(src='/javascripts/getURLVar.js')
+        script(src='/javascripts/beautifyCodeMirror.js')
+        link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    body
+        #topWrapper
+            #title Untitled
+            i.fa.fa-pencil
+            button#run.topButton Run
+            button#save(type="submit" form="formAddCoBit").topButton Save
+            button#settingsToggle.topButton Settings
+            form#formAddCoBit(name="addCoBit", method="post", action="/addCoBit")
+            textarea#jsValue.valuePlaceholder.hidden(name='jsValue' form="formAddCoBit")
+            textarea#cssValue.valuePlaceholder.hidden(name='cssValue' form="formAddCoBit")
+            textarea#htmlValue.valuePlaceholder.hidden(name='htmlValue' form="formAddCoBit")
+            textarea#headValue.valuePlaceholder.hidden(name='settingsValue' form="formAddCoBit")
+            textarea#libsValue.valuePlaceholder.hidden(name='libsValue' form="formAddCoBit")
+            textarea#titleValue.valuePlaceholder.hidden(name='titleValue' form="formAddCoBit")
+            textarea#update.valuePlaceholder.hidden(name='update' form="formAddCoBit")
+            textarea#user.valuePlaceholder.hidden(name='user' form="formAddCoBit")
+            form#getCoBitFromId.hidden(name="getCoBitFromId", method="post", action="/getCoBitFromId")
+                input#coBitIdValue(type="text" name="coBitId")
+        #allWrapper
+            #settings.hidden
+                p#settingsTitle Settings
+                textarea#headInput(name='headInput', cols='30', rows='10', placeholder='Stuff for <head>')
+                #libraries
+                    input.libraryInput(type='text', placeholder='add js libraries')
+                    button.deleteLibrary
+                        i.fa.fa-minus
+                    input.libraryInput(type='text', placeholder='add js libraries')
+                    button.deleteLibrary
+                        i.fa.fa-minus
+                button#addLibrary
+                    i.fa.fa-plus
+                button#settingsClose.settingsButton Close
+            #editorWrapper
+                #jsWrapper.codeWrapper
+                    #jsHandle.handle JS
+                        button#tidyJs.tidy Tidy
+                    #jsEditor.editorBlock
+                #cssWrapper.codeWrapper
+                    #cssHandle.handle.resizeable CSS
+                        button#tidyCss.tidy Tidy
+                    #cssEditor.editorBlock
+                #htmlWrapper.codeWrapper
+                    #htmlHandle.handle.resizeable HTML
+                        button#tidyHtml.tidy Tidy
+                    #htmlEditor.editorBlock
+            #resultWrapper
+                .overlay
+                iframe#result(frameborder='0')
+            #resizer
+                #widthShow penis
+                i#dragbars.fa.fa-bars
+
+        script(src='/javascripts/test.js')
