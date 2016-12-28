@@ -231,9 +231,7 @@ body {
     border: 0 none #ffffff;
     border-radius: 50px;
 }
-::-webkit-scrollbar-track:hover {
-    background: #dfdfdf;
-}
+
 ::-webkit-scrollbar-track:active {
     background: transparent;
 }

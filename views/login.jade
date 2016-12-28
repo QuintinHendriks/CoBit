@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        title Login to CoBit
+        script(src='/javascripts/jquery/jquery-3.1.1.min.js')
+        script(src='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js')
+    body
+        form#loginForm(name="login" method="post" action="/login")
+            input#uNameInput(type="text" name="uName")
+            input#pwInput(type="text" name="uName")
+            button#loginButton(type="submit" form="loginForm")

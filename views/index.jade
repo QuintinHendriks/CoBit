@@ -2,9 +2,6 @@ doctype html
 html(lang='en')
     head
         meta(charset='UTF-8')
-        meta(http-equiv='Cache-Control', content='no-cache')
-        meta(http-equiv='Pragma', content='no-cache')
-        meta(http-equiv='Expires', content='0')
         title Cobit
         script(src='/javascripts/codemirror-5.20.2/lib/codemirror.js')
         script(src='/javascripts/codemirror-master/dist/emmet.js')
@@ -39,8 +36,6 @@ html(lang='en')
             textarea#titleValue.valuePlaceholder.hidden(name='titleValue' form="formAddCoBit")
             textarea#update.valuePlaceholder.hidden(name='update' form="formAddCoBit")
             textarea#user.valuePlaceholder.hidden(name='user' form="formAddCoBit")
-            form#getCoBitFromId.hidden(name="getCoBitFromId", method="post", action="/getCoBitFromId")
-                input#coBitIdValue(type="text" name="coBitId")
         #allWrapper
             #settings.hidden
                 p#settingsTitle Settings
