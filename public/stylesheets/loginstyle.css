@@ -1,0 +1,6 @@
+body {
+    background-image: url(../images/sayagata-400px.png) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

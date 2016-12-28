@@ -3,7 +3,6 @@
 body {
     margin: 0;
     overflow: hidden;
-
 }
 
 .CodeMirror {
@@ -48,7 +47,7 @@ body {
     position: absolute;
 }
 
-#title{
+#title {
     font-family: 'Muli', sans-serif;
     font-size: 30px;
     float: left;
@@ -62,14 +61,14 @@ body {
     margin: 0 auto;
 }
 
-.libraryInput{
+.libraryInput {
     display: inline-block;
     width: 375px;
     height: 30px;
     margin: 0 auto;
 }
 
-.deleteLibrary{
+.deleteLibrary {
     display: inline;
     margin-top: 7px;
 }
@@ -96,7 +95,7 @@ body {
     z-index: 100000;
 }
 
-#settingsTitle{
+#settingsTitle {
     margin-top: 30px;
     font-size: 40px;
 }
@@ -136,8 +135,8 @@ body {
     border-radius: 3px;
 }
 
-#dragbars{
-    margin-top: calc((100vh - 70px)/2);
+#dragbars {
+    margin-top: calc((100vh - 70px) / 2);
     margin-left: -2.5px;
     -webkit-transform: scaleX(0.7) rotate(-90deg);
     -moz-transform: scaleX(0.7) rotate(-90deg);
@@ -157,7 +156,7 @@ body {
     box-shadow: 0 3px 3px -2px white;
 }
 
-.tidy{
+.tidy {
     position: absolute;
     right: 10px;
     height: 20px;
@@ -211,21 +210,26 @@ body {
     width: 6px;
     height: 6px;
 }
+
 ::-webkit-scrollbar-button {
     width: 0;
     height: 0;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #515151;
     border: 0 none #ffffff;
     border-radius: 50px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #515151;
 }
+
 ::-webkit-scrollbar-thumb:active {
     background: #7a7a7a;
 }
+
 ::-webkit-scrollbar-track {
     background: transparent;
     border: 0 none #ffffff;
@@ -235,6 +239,70 @@ body {
 ::-webkit-scrollbar-track:active {
     background: transparent;
 }
+
 ::-webkit-scrollbar-corner {
     background: transparent;
+}
+
+#loginWrapperAll{
+    margin: auto auto;
+    height: 400px;
+    top: 200px;
+    left: 500px;
+    width: 600px;
+    margin-top: calc((100vh - 600px)/2);
+}
+
+#topLogin{
+    font-family: 'Muli', sans-serif;
+    font-size: 50px;
+    float: left;
+    display: inline;
+}
+
+#topLogin p{
+    font-size: 30px;
+}
+
+#loginWrapper {
+    display: inline;
+    float: right;
+    height: 330px;
+    width: 225px;
+    font-family: 'Muli', sans-serif;
+    border-left: thick solid grey;
+    padding-left: 30px;
+}
+
+#loginButton h1{
+    font-size: 40px;
+}
+
+.loginInput{
+    font-size: 30px;
+    height: 40px;
+    display: block;
+    width: 225px;
+    margin: 0 auto;
+}
+
+#loginButton{
+    width: 120px;
+    margin: 0 auto;
+    background: grey;
+    border: none;
+    display: block;
+    margin-top: 20px;
+    height: 40px;
+    color: lightyellow;
+    font-size: 25px;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px darkgrey;
+}
+
+#loginWrapper p{
+    font-size: 15px;
+    text-align: left;
+    margin: 0;
+    margin-top: 3px;
 }

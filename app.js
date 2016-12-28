@@ -10,7 +10,7 @@ var monk = require('monk');
 var db = monk('mongodb://Quintin:database123@ds159237.mlab.com:59237/fiddeldatabase');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var cobit = require('./routes/cobit');
 var login = require('./routes/login');
 
 var app = express();
@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/cobit', cobit);
 app.use('/login', login);
 
 // catch 404 and forward to error handler

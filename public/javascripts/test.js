@@ -211,7 +211,7 @@ $(function () {
 
 
     function showCoBit(id) {
-        $.getJSON('/users/coBits', function (data) {
+        $.getJSON('/cobit/coBits', function (data) {
             $.each(data, function () {
                 if (this._id === id) {
                     $("#libraries").empty();
