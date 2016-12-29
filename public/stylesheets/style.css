@@ -258,9 +258,11 @@ body {
     font-size: 50px;
     float: left;
     display: inline;
+    color: lightgrey;
 }
 
 #topLogin p{
+    color: grey;
     font-size: 30px;
 }
 
@@ -294,13 +296,14 @@ body {
     display: block;
     margin-top: 20px;
     height: 40px;
-    color: lightyellow;
+    color: lightgrey;
     font-size: 25px;
     border-radius: 5px;
-    box-shadow: 1px 4px 4px darkgrey;
+    box-shadow: 1px 4px 4px black;
 }
 
 #loginWrapper p{
+    color: grey;
     font-size: 15px;
     text-align: left;
     margin: 0;

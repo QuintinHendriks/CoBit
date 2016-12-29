@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/sayagata-400px.png) !important;
+    background-image: url(../backgrounds/escheresque_ste_@2X.png) !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,9 +10,11 @@ body {
 }
 
 #loginWrapper p{
+    color: lightgrey;
     display: inline;
 }
 
 a{
+    color: lightgray;
     display: inline;
 }
