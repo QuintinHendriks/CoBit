@@ -23,7 +23,7 @@ html(lang='en')
     body
         #topWrapper
             #title Untitled
-            i.fa.fa-pencil
+            i#editIco.fa.fa-pencil
             button#run.topButton Run
             button#save(type="submit" form="formAddCoBit").topButton Save
             button#settingsToggle.topButton Settings
@@ -35,6 +35,7 @@ html(lang='en')
             textarea#libsValue.valuePlaceholder.hidden(name='libsValue' form="formAddCoBit")
             textarea#titleValue.valuePlaceholder.hidden(name='titleValue' form="formAddCoBit")
             textarea#update.valuePlaceholder.hidden(name='update' form="formAddCoBit")
+            textarea#dateValue.valuePLaceholder.hidden(name='dateValue' form="formAddCoBit")
             textarea#user.valuePlaceholder.hidden(name='user' form="formAddCoBit")
         #allWrapper
             #settings.hidden

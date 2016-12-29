@@ -211,25 +211,22 @@ $(function () {
 
 
     function showCoBit(id) {
-        $.getJSON('/cobit/coBits', function (data) {
-            $.each(data, function () {
-                if (this._id === id) {
-                    $("#libraries").empty();
-                    var libsVal = this.libraries.split(",");
-                    for (var i = 0; i < libsVal.length; i++) {
-                        $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
-                    }
-                    jsEditor.setValue(this.js);
-                    cssEditor.setValue(this.css);
-                    htmlEditor.setValue(this.html);
-                    $("#headInput").text(this.head);
-                    $("#title").text(this.title);
-                    if(this.owner !== "anon: "+ip){
-                        $("#save").remove();
-                    }
-                    update();
-                }
-            });
+        $.getJSON('/cobit/'+ id, function (data) {
+            console.log(data);
+            $("#libraries").empty();
+            var libsVal = data[0].libraries.split(",");
+            for (var i = 0; i < libsVal.length; i++) {
+                $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
+            }
+            jsEditor.setValue(data[0].js);
+            cssEditor.setValue(data[0].css);
+            htmlEditor.setValue(data[0].html);
+            $("#headInput").text(data[0].head);
+            $("#title").text(data[0].title);
+            if(data[0].owner !== "anon: "+ip){
+                $("#save").remove();
+            }
+            update();
         });
     }
 

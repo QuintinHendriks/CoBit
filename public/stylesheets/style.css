@@ -19,7 +19,7 @@ body {
 #topWrapper {
     width: 100vw;
     height: 50px;
-    background: red;
+    background-image: url(/backgrounds/escheresque_ste.png);
     top: 0;
 }
 
@@ -51,6 +51,11 @@ body {
     font-family: 'Muli', sans-serif;
     font-size: 30px;
     float: left;
+    color: lightgrey;
+}
+
+#editIco{
+    color: lightgrey;
 }
 
 #headInput {

@@ -29,9 +29,9 @@ router.post('/addCoBit', function (req, res) {
     var libsVal = req.body.libsValue;
     var updateVal = req.body.update;
     var userVal = req.body.user;
+    var dateval = req.body.dateValue;
 
     var collection = db.get('coBits');
-
 
     if (updateVal === 'false') {
         collection.insert({
@@ -41,7 +41,8 @@ router.post('/addCoBit', function (req, res) {
             "head": headVal,
             "title": titleVal,
             "libraries": libsVal,
-            "owner": userVal
+            "owner": userVal,
+            "date": dateVal
         }, function (err, doc) {
             if (err) {
                 // If it failed, return error
@@ -64,8 +65,37 @@ router.post('/addCoBit', function (req, res) {
                 "title": titleVal,
                 "libraries": libsVal
             }
+        }, function (err, doc) {
+            if (err) {
+                // If it failed, return error
+                res.send(err);
+            }
+            else {
+                console.log(doc);
+                // And forward to success page
+                res.redirect("/?coBit=" + updateVal);
+            }
         });
     }
+});
+
+router.post('/addCoBit/:id', function(req, res) {
+    var db = req.db;
+    var collection = db.get('coBits');
+    var cobitToUpdate = req.params.id;
+    collection.update(req.body, function(err, result){
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
+    });
+});
+
+router.post("/test/:id", function(req, res){
+    var db = req.db;
+    var collection = db.get('coBits');
+    collection.find({"_id": req.params.id},{},function(e,docs){
+        res.json(docs);
+    });
 });
 
 module.exports = router;

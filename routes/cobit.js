@@ -13,6 +13,12 @@ router.get('/coBits', function(req, res) {
     });
 });
 
-
+router.get('/:id', function(req, res) {
+    var db = req.db;
+    var collection = db.get('coBits');
+    collection.find({"_id": req.params.id},{},function(e,docs){
+        res.json(docs);
+    });
+});
 
 module.exports = router;
