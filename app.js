@@ -12,6 +12,7 @@ var db = monk('mongodb://Quintin:database123@ds159237.mlab.com:59237/fiddeldatab
 var index = require('./routes/index');
 var cobit = require('./routes/cobit');
 var login = require('./routes/login');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -19,8 +20,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(session({secret: 'ssshhhhh'}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -35,6 +35,7 @@ app.use(function (req, res, next) {
 app.use('/', index);
 app.use('/cobit', cobit);
 app.use('/login', login);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

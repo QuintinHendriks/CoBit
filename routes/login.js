@@ -4,6 +4,18 @@
 var express = require('express');
 var router = express.Router();
 
+//function for hashing passwords
+String.prototype.hashCode = function() {
+    var hash = 0, i, chr, len;
+    if (this.length === 0) return hash;
+    for (i = 0, len = this.length; i < len; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+};
+
 router.get('/', function (req, res, next) {
     res.render('login', {title: 'Login to CoBit'});
 });
@@ -20,7 +32,37 @@ router.post('/login', function (req, res, next){
 });
 
 router.get("/register", function(req, res, next){
-   res.render("newuser", {title: "Register to CoBit"});
+   res.render("newuser");
 });
+
+router.post("/registerUser", function(req, res, next){
+    var db = req.db;
+    var uname = req.body.uNameSet;
+    var email = req.body.mailSet;
+    var password = req.body.passwordSet.hashCode();
+    var first = req.body.firstname;
+    var last = req.body.lastname;
+
+    var collection = db.get("users");
+
+    collection.insert({
+        "username": uname,
+        "email": email,
+        "password": password,
+        "firstname": first,
+        "lastname": last
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("Not Today");
+        }
+        else {
+            console.log(doc);
+            // And forward to success page
+            res.redirect("../login");
+        }
+    });
+});
+
 
 module.exports = router;

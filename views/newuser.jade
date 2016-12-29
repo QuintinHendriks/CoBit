@@ -1,8 +1,33 @@
-extends layout
-
-block content
-    h1= title
-    form#formAddUser(name="adduser",method="post",action="/adduser")
-        input#inputUserName(type="text", placeholder="username", name="username")
-        input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
-        button#btnSubmit(type="submit") submit
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        title Login to CoBit
+        script(src='/javascripts/jquery/jquery-3.1.1.min.js')
+        script(src='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js')
+        script(src='/javascripts/validatePass.js')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/registerStyle.css')
+    body
+        #loginWrapperAll
+            #topLogin CoBit
+                p Register to CoBit
+            #loginWrapper
+                form#registerForm(name="register" method="post" action="/login/registerUser")
+                    p Username: (only upper and lowercase letters)
+                    input#uNameSet.loginInput(type="text" name="uNameSet" pattern="^[A-Za-z]+" oninput="checkName(this)" required)
+                    p e-mail:
+                    input#mailSet.loginInput(type="email" name="mailSet" oninput="checkMail(this)" required)
+                    p Password:
+                    input#pwSet.loginInput(type="password" name="passwordSet" required)
+                    p Repeat password
+                    input#pwRepeat.loginInput(type="password" name="repeatPassword" oninput="check(this)" required)
+                    p First name (optional)
+                    input#firstNSet.loginInput(type="text" name="firstname")
+                    p Last name (optional)
+                    input#lastNSet.loginInput(type="text" name="lastname")
+                    button#loginButton(type="submit" form="registerForm") Register
+                    br
+                    p Already regsitered?
+                    a(href="../login")  Login
+                    p  here!
