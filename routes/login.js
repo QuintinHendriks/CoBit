@@ -14,6 +14,13 @@ router.post('/login', function (req, res, next){
     var uname = req.body.uName;
     var password = req.body.password;
 
+    var collection = db.get("users");
+
 
 });
+
+router.get("/register", function(req, res, next){
+   res.render("newuser", {title: "Register to CoBit"});
+});
+
 module.exports = router;

@@ -306,3 +306,7 @@ body {
     margin: 0;
     margin-top: 3px;
 }
+
+#registerLink{
+    float: right;
+}
