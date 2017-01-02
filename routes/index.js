@@ -12,10 +12,13 @@ router.get('/test', function (req, res) {
 });
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/new', function (req, res, next) {
     res.render('index', {title: 'CoBit'});
 });
 
+router.get('/', function (req, res) {
+    res.render("index");
+});
 
 router.post('/addCoBit', function (req, res) {
 
@@ -56,7 +59,7 @@ router.post('/addCoBit', function (req, res) {
             }
         });
     }
-    else if(updateVal !== 'false'){
+    else if (updateVal !== 'false') {
         collection.update({"_id": updateVal}, {
             $set: {
                 "js": jsVal,
@@ -80,22 +83,17 @@ router.post('/addCoBit', function (req, res) {
     }
 });
 
-router.post('/addCoBit/:id', function(req, res) {
+router.get("/:id", function (req, res) {
     var db = req.db;
-    var collection = db.get('coBits');
-    var cobitToUpdate = req.params.id;
-    collection.update(req.body, function(err, result){
-        res.send(
-            (err === null) ? { msg: '' } : { msg: err }
-        );
-    });
-});
+    var collection = db.get("coBits");
 
-router.post("/test/:id", function(req, res){
-    var db = req.db;
-    var collection = db.get('coBits');
-    collection.find({"_id": req.params.id},{},function(e,docs){
-        res.json(docs);
+    collection.find({"_id": req.params.id}, {}, function (e, docs) {
+        if (e) {
+            res.send(e);
+        }
+        else {
+            res.render('index', {coBitData: docs[0]});
+        }
     });
 });
 

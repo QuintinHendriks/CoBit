@@ -212,30 +212,27 @@ $(function () {
         $("#dateValue").text(dateVal);
     });
 
-
-    function showCoBit(id) {
-        $.getJSON('/cobit/'+ id, function (data) {
-            console.log(data);
+    function showCoBit() {
+        if(local_data !== undefined) {
+            console.log(local_data);
             $("#libraries").empty();
-            var libsVal = data[0].libraries.split(",");
+            var libsVal = local_data.libraries.split(",");
             for (var i = 0; i < libsVal.length; i++) {
                 $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
             }
-            jsEditor.setValue(data[0].js);
-            cssEditor.setValue(data[0].css);
-            htmlEditor.setValue(data[0].html);
-            $("#headInput").text(data[0].head);
-            $("#title").text(data[0].title);
-            if(data[0].owner !== "anon: "+ip){
+            jsEditor.setValue(local_data.js);
+            cssEditor.setValue(local_data.css);
+            htmlEditor.setValue(local_data.html);
+            $("#headInput").text(local_data.head);
+            $("#title").text(local_data.title);
+            if (local_data.owner !== "anon: " + ip) {
                 $("#save").remove();
             }
             update();
-        });
+        }
     }
 
-    if (getURLVar("coBit") !== false) {
-        showCoBit(getURLVar("coBit"));
-    }
+    showCoBit();
 
     $("#tidyHtml").click(function () {
         var totalLines = htmlEditor.lineCount();

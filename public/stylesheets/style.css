@@ -29,7 +29,7 @@ body {
     border: none;
     font-family: 'Muli', sans-serif;
     font-size: 20px;
-    width: 100px;
+    width: auto;
     height: 40px;
     float: right;
     margin-right: 10px;

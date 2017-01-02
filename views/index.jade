@@ -20,12 +20,14 @@ html(lang='en')
         script(src='/javascripts/getURLVar.js')
         script(src='/javascripts/beautifyCodeMirror.js')
         link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        script(type='text/javascript') var local_data = !{JSON.stringify(coBitData)};
     body
         #topWrapper
             #title Untitled
             #owner A coBit by: anon
             i#editIco.fa.fa-pencil
             button#run.topButton Run
+                i.fa.fa-play
             button#save(type="submit" form="formAddCoBit").topButton Save
             button#settingsToggle.topButton Settings
             form#formAddCoBit(name="addCoBit", method="post", action="/addCoBit")
