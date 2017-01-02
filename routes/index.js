@@ -12,9 +12,6 @@ router.get('/test', function (req, res) {
 });
 
 /* GET home page. */
-router.get('/new', function (req, res, next) {
-    res.render('index', {title: 'CoBit'});
-});
 
 router.get('/', function (req, res) {
     res.render("index");
@@ -55,7 +52,7 @@ router.post('/addCoBit', function (req, res) {
                 console.log(doc);
                 console.log(err);
                 // And forward to success page
-                res.redirect("/?coBit=" + doc._id);
+                res.redirect("/" + doc._id);
             }
         });
     }
@@ -77,22 +74,27 @@ router.post('/addCoBit', function (req, res) {
             else {
                 console.log(doc);
                 // And forward to success page
-                res.redirect("/?coBit=" + updateVal);
+                res.redirect("/" + updateVal);
             }
         });
     }
 });
 
 router.get("/:id", function (req, res) {
+    var id = req.params.id;
     var db = req.db;
     var collection = db.get("coBits");
 
-    collection.find({"_id": req.params.id}, {}, function (e, docs) {
-        if (e) {
-            res.send(e);
+    if(id === "login"){
+        res.render("login");
+    }
+
+    collection.find({"_id": id}, {}, function (e, docs) {
+        if (e !== null || docs.length === 0) {
+            res.render("404");
         }
-        else {
-            res.render('index', {coBitData: docs[0]});
+        else if(e === null) {
+            res.render('index.jade', {coBitData: docs[0]});
         }
     });
 });

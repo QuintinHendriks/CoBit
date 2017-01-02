@@ -17,10 +17,6 @@ String.prototype.hashCode = function () {
     return hash;
 };
 
-router.get('/', function (req, res, next) {
-    res.render('login', {title: 'Login to CoBit'});
-});
-
 
 var sess;
 router.post('/loginuser', function (req, res, next) {
@@ -83,5 +79,10 @@ router.post("/registerUser", function (req, res, next) {
     });
 });
 
+
+
+router.get('/', function (req, res, next) {
+    res.render('login', {title: 'Login to CoBit'});
+});
 
 module.exports = router;

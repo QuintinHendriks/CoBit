@@ -232,7 +232,9 @@ $(function () {
         }
     }
 
-    showCoBit();
+    if(local_data !== undefined) {
+        showCoBit();
+    }
 
     $("#tidyHtml").click(function () {
         var totalLines = htmlEditor.lineCount();

@@ -18,3 +18,13 @@ a{
     color: lightgray;
     display: inline;
 }
+
+#title{
+    font-size: 40px !important;
+    float: left !important;
+}
+
+#topWrapper{
+    background: #313131;
+    border-bottom: 3px solid black;
+}
