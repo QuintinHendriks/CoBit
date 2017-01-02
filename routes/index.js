@@ -29,7 +29,7 @@ router.post('/addCoBit', function (req, res) {
     var libsVal = req.body.libsValue;
     var updateVal = req.body.update;
     var userVal = req.body.user;
-    var dateval = req.body.dateValue;
+    var dateVal = req.body.dateValue;
 
     var collection = db.get('coBits');
 
@@ -46,10 +46,11 @@ router.post('/addCoBit', function (req, res) {
         }, function (err, doc) {
             if (err) {
                 // If it failed, return error
-                res.send("Not Today");
+                res.send(err);
             }
             else {
                 console.log(doc);
+                console.log(err);
                 // And forward to success page
                 res.redirect("/?coBit=" + doc._id);
             }

@@ -3,15 +3,16 @@
  */
 var express = require('express');
 var router = express.Router();
+var session = require('express-session');
 
 //function for hashing passwords
-String.prototype.hashCode = function() {
+String.prototype.hashCode = function () {
     var hash = 0, i, chr, len;
     if (this.length === 0) return hash;
     for (i = 0, len = this.length; i < len; i++) {
-        chr   = this.charCodeAt(i);
-        hash  = ((hash << 5) - hash) + chr;
-        hash |= 0; // Convert to 32bit integer
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0;
     }
     return hash;
 };
@@ -20,22 +21,40 @@ router.get('/', function (req, res, next) {
     res.render('login', {title: 'Login to CoBit'});
 });
 
-router.post('/login', function (req, res, next){
+
+var sess;
+router.post('/loginuser', function (req, res, next) {
     var db = req.db;
 
     var uname = req.body.uName;
-    var password = req.body.password;
-
+    var pWord = req.body.passWord;
+    var pwvalue = pWord.hashCode();
     var collection = db.get("users");
 
+    collection.find({"username": uname}, {}, function (e, docs) {
+        if (docs[0].password === pwvalue) {
+            sess = req.session;
 
+            sess.username = docs[0].username;
+
+            if(sess.username) {
+                res.redirect("../"); 
+            }
+            console.log(sess.username);
+        }
+        else {
+            res.redirect("../login/register");
+        }
+
+
+    });
 });
 
-router.get("/register", function(req, res, next){
-   res.render("newuser");
+router.get("/register", function (req, res, next) {
+    res.render("newuser");
 });
 
-router.post("/registerUser", function(req, res, next){
+router.post("/registerUser", function (req, res, next) {
     var db = req.db;
     var uname = req.body.uNameSet;
     var email = req.body.mailSet;

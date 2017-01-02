@@ -194,6 +194,8 @@ $(function () {
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
         var userVal = "anon: "+ip;
+        var dateVal = Date.now();
+        console.log(dateVal);
 
         if (getURLVar("coBit") !== false) {
             updateVal = getURLVar("coBit");
@@ -207,6 +209,7 @@ $(function () {
         $("#titleValue").text(titleVal);
         $("#update").text(updateVal);
         $("#user").text(userVal);
+        $("#dateValue").text(dateVal);
     });
 
 

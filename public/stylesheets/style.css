@@ -19,14 +19,16 @@ body {
 #topWrapper {
     width: 100vw;
     height: 50px;
-    background-image: url(/backgrounds/escheresque_ste.png);
+    background-image: url(../backgrounds/escheresque_ste.png);
     top: 0;
 }
 
 .topButton {
     background: lightseagreen;
     border-radius: 5px;
-    border: 2px solid grey;
+    border: none;
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
     width: 100px;
     height: 40px;
     float: right;
@@ -49,12 +51,24 @@ body {
 
 #title {
     font-family: 'Muli', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     float: left;
     color: lightgrey;
+    margin-left: 10px;
+
 }
 
-#editIco{
+#owner{
+    position: absolute;
+    float: left;
+    color: lightgrey;
+    font-family: 'Muli', sans-serif;
+    font-size: 15px;
+    top: 28px;
+    left: 10px;
+}
+
+#editIco {
     color: lightgrey;
 }
 
@@ -167,7 +181,7 @@ body {
     height: 20px;
     margin-top: 5px;
     border-radius: 3px;
-    background: grey;
+    background: lightseagreen;
     font-family: 'Muli', sans-serif;
     width: 50px;
     text-align: center;
@@ -249,16 +263,15 @@ body {
     background: transparent;
 }
 
-#loginWrapperAll{
-    margin: auto auto;
+#loginWrapperAll {
     height: 400px;
     top: 200px;
     left: 500px;
     width: 600px;
-    margin-top: calc((100vh - 600px)/2);
+    margin-top: calc((100vh - 600px) / 2);
 }
 
-#topLogin{
+#topLogin {
     font-family: 'Muli', sans-serif;
     font-size: 50px;
     float: left;
@@ -266,7 +279,7 @@ body {
     color: lightgrey;
 }
 
-#topLogin p{
+#topLogin p {
     color: grey;
     font-size: 30px;
 }
@@ -281,11 +294,11 @@ body {
     padding-left: 30px;
 }
 
-#loginButton h1{
+#loginButton h1 {
     font-size: 40px;
 }
 
-.loginInput{
+.loginInput {
     font-size: 30px;
     height: 40px;
     display: block;
@@ -293,7 +306,7 @@ body {
     margin: 0 auto;
 }
 
-#loginButton{
+#loginButton {
     width: 120px;
     margin: 0 auto;
     background: grey;
@@ -307,7 +320,7 @@ body {
     box-shadow: 1px 4px 4px black;
 }
 
-#loginWrapper p{
+#loginWrapper p {
     color: grey;
     font-size: 15px;
     text-align: left;
@@ -315,6 +328,6 @@ body {
     margin-top: 3px;
 }
 
-#registerLink{
+#registerLink {
     float: right;
 }

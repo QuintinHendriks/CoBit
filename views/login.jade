@@ -13,11 +13,11 @@ html(lang="en")
                 p Welcome to CoBit
             #loginWrapper
                 h1 Login
-                form#loginForm(name="login" method="post" action="/login")
+                form#loginForm(name="login" method="post" action="/login/loginuser")
                     p Username or e-mail:
                     input#uNameInput.loginInput(type="text" name="uName")
                     p Password:
-                    input#pwInput.loginInput(type="password" name="password")
+                    input#pwInput.loginInput(type="password" name="passWord")
                     a(href="/login/forgotpassword") forgot password?
                     a#registerLink(href="/login/register") Register
                     button#loginButton(type="submit" form="loginForm") Login
