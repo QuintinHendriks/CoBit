@@ -9,5 +9,9 @@ $(function(){
         return vars[vars.length-1];
     }
 
-    console.log(local_data);
+    console.log(login_data);
+
+    if(login_data){
+        $("#toSignUp").replaceWith("<a href='../login/logout'><button id='registerButton' class='topButton'>logout</button></a>")
+    }
 });

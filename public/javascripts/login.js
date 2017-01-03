@@ -13,5 +13,6 @@ $(function () {
     if(login_data){
         $("#loginWrapper").empty();
         $("#loginWrapper").append("<h1>You are already logged in as: " + login_data + "</h1>");
+        $("#toSignUp").replaceWith("<a href='../login/logout'><button id='registerButton' class='topButton'>logout</button></a>")
     }
 });

@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
+var session = require("express-session");
 
 router.get("/userlist", function (req, res) {
     var db = req.db;
@@ -12,7 +13,10 @@ router.get("/userlist", function (req, res) {
     });
 });
 
+var sess;
 router.get("/:id", function (req, res) {
+    sess = req.session;
+
     var db = req.db;
     var collection = db.get('users');
     collection.find({"username": req.params.id}, {}, function (e, docs) {
@@ -20,7 +24,12 @@ router.get("/:id", function (req, res) {
             res.send(e);
         }
         else {
-            res.render('test', {userData: docs[0]});
+            if (sess.username) {
+                res.render('test', {userData: docs[0], loginData: sess.username});
+            }
+            else {
+                res.render('test', {userData: docs[0]});
+            }
         }
     });
 });

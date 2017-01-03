@@ -46,7 +46,7 @@ router.post('/loginuser', function (req, res, next) {
                 sess.username = docs[0].username;
 
                 if (sess.username) {
-                    res.render("test", {userData: sess.username});
+                    res.redirect("../users/" + docs[0].username);
                 }
                 console.log(sess.username);
             }
