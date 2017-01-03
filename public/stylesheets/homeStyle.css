@@ -28,20 +28,3 @@ a{
     background: #313131;
     border-bottom: 3px solid black;
 }
-
-#loginError{
-    margin-top: 5px;
-    width: auto;
-    height: auto;
-    padding: 4px;
-    border: 2px solid red;
-    background: orange;
-    color: white;
-    border-radius: 15px;
-}
-
-#removeError{
-    color: black;
-    top: 3px;
-    float: right;
-}

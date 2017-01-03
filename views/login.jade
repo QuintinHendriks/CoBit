@@ -7,21 +7,27 @@ html(lang="en")
         script(src='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js')
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/stylesheets/loginstyle.css')
+        script(src='/javascripts/getURLVar.js')
+        script(src='/javascripts/login.js')
+        link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        script(type='text/javascript') var login_data = !{JSON.stringify(loginData)};
     body
         #topWrapper
             #title CoBit
-            button#registerButton.topButton Sign Up
-            button#newCoBitButton.topButton + New CoBit
+            a(href='../login/register')
+                button#registerButton.topButton Sign Up
+            a(href='cobit/new')
+                button#newCoBitButton.topButton + New CoBit
         #loginWrapperAll
             #topLogin CoBit
                 p Welcome to CoBit
             #loginWrapper
                 h1 Login
                 form#loginForm(name="login" method="post" action="/login/loginuser")
-                    p Username or e-mail:
-                    input#uNameInput.loginInput(type="text" name="uName")
+                    p Username:
+                    input#uNameInput.loginInput(type="text" name="uName" required)
                     p Password:
-                    input#pwInput.loginInput(type="password" name="passWord")
+                    input#pwInput.loginInput(type="password" name="passWord" required)
                     a(href="/login/forgotpassword") forgot password? #{loggedIn}
                     a#registerLink(href="/login/register") Register
                     button#loginButton(type="submit" form="loginForm") Login

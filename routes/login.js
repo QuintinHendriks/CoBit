@@ -17,12 +17,19 @@ String.prototype.hashCode = function () {
     return hash;
 };
 
+var sess;
 router.get('/', function(req, res){
-   res.render("login");
+    sess = req.session;
+
+    if(sess.username){
+        res.render('login', {loginData: sess.username});
+    }
+    else{
+        res.render('login');
+    }
 });
 
 
-var sess;
 router.post('/loginuser', function (req, res, next) {
     var db = req.db;
 
@@ -32,26 +39,36 @@ router.post('/loginuser', function (req, res, next) {
     var collection = db.get("users");
 
     collection.find({"username": uname}, {}, function (e, docs) {
-        if (docs[0].password === pwvalue) {
-            sess = req.session;
+        if(docs) {
+            if (docs[0].password === pwvalue) {
+                sess = req.session;
 
-            sess.username = docs[0].username;
+                sess.username = docs[0].username;
 
-            if (sess.username) {
-                res.render("test", {userData: sess.username});
+                if (sess.username) {
+                    res.render("test", {userData: sess.username});
+                }
+                console.log(sess.username);
             }
-            console.log(sess.username);
+            else{
+                res.redirect("/login?success=true");
+            }
         }
-        else {
-            res.redirect("../login/register");
+        else{
+            res.redirect("/login?success=true");
         }
-
-
     });
 });
 
 router.get("/register", function (req, res, next) {
-    res.render("newuser");
+    sess = req.session;
+
+    if(sess.username){
+        res.render('newuser', {loginData: sess.username});
+    }
+    else{
+        res.render('newuser');
+    }
 });
 
 router.post("/registerUser", function (req, res, next) {

@@ -14,6 +14,10 @@ body {
     display: inline;
 }
 
+#loginWrapper h1{
+    color: lightgray !important;
+}
+
 a{
     color: lightgray;
     display: inline;

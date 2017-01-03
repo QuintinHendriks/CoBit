@@ -8,11 +8,15 @@ html(lang="en")
         script(src='/javascripts/validatePass.js')
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/stylesheets/registerStyle.css')
+        script(type='text/javascript') var login_data = !{JSON.stringify(loginData)};
+        script(src='/javascripts/register.js')
     body
         #topWrapper
             #title CoBit
-            button#loginButtonTop.topButton login
-            button#newCoBitButton.topButton + New CoBit
+            a(href='/login')
+                button#loginButtonTop.topButton login
+            a(href='/cobit/new')
+                button#newCoBitButton.topButton + New CoBit
         #loginWrapperAll
             #topLogin CoBit
                 p Register to CoBit
