@@ -22,6 +22,6 @@ html(lang="en")
                     input#uNameInput.loginInput(type="text" name="uName")
                     p Password:
                     input#pwInput.loginInput(type="password" name="passWord")
-                    a(href="/login/forgotpassword") forgot password?
+                    a(href="/login/forgotpassword") forgot password? #{loggedIn}
                     a#registerLink(href="/login/register") Register
                     button#loginButton(type="submit" form="loginForm") Login

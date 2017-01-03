@@ -51,7 +51,7 @@ app.use('/users', users);
 app.use(function (req, res, next) {
     res.render('404')
 });
-
+/*
 // error handler
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development
@@ -66,5 +66,5 @@ app.use(function (err, req, res, next) {
 app.get('*', function(req, res){
     res.render('404');
 });
-
+*/
 module.exports = app;

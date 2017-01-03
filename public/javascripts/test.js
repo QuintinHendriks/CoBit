@@ -98,7 +98,7 @@ $(function () {
         cursor: 'grabbing',
         stop: function () {
             $("#cssHandle").draggable({containment: [0, 80, 0, $("#htmlHandle").offset().top - 30]});
-            $("#cssEditor").find(".CodeMirror").height(Math.floor($("#htmlHandle").offset().top - $("#cssHandle").offset().top - 30));
+            $("#cssEditor").find(".CodeMirror").height(Math.floor($("#htmlHandle").offset().top - $("#cssHandle").offset().top - 29));
             $("#cssEditor").find(".CodeMirror").css("position", "absolute");
             $("#htmlEditor").find(".CodeMirror").height(Math.floor($(window).height() - $("#htmlHandle").offset().top - 29));
             $("#htmlEditor").find(".CodeMirror").css("position", "absolute").css("top", ($("#htmlHandle").offset().top - 20) + 'px');
@@ -128,7 +128,6 @@ $(function () {
                 libs.push($(this).val());
             }
         });
-        console.log(libs);
         var libsStr = '';
         for (var i = 0; i < libs.length; i++) {
             libsStr += "<script src='" + libs[i] + "'></script>";
@@ -172,13 +171,6 @@ $(function () {
     });
 
 
-    var ip;
-    $.get("http://ipinfo.io", function(response) {
-        ip = response.ip;
-        console.log(ip);
-    }, "jsonp");
-
-
     $('#save').click(function () {
         var libsVal = [];
         $(".libraryInput").each(function () {
@@ -193,12 +185,12 @@ $(function () {
         var htmlVal = htmlEditor.getValue();
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
-        var userVal = "anon: "+ip;
+        var userVal = "anon: " + ip;
         var dateVal = Date.now();
         console.log(dateVal);
 
-        if (getURLVar("coBit") !== false) {
-            updateVal = getURLVar("coBit");
+        if (local_data._id.length === 24) {
+            updateVal = local_data._id;
         }
 
         $("#jsValue").text(jsVal);
@@ -212,8 +204,10 @@ $(function () {
         $("#dateValue").text(dateVal);
     });
 
+    var ip;
+
     function showCoBit() {
-        if(local_data !== undefined) {
+        if (local_data !== undefined) {
             console.log(local_data);
             $("#libraries").empty();
             var libsVal = local_data.libraries.split(",");
@@ -225,14 +219,20 @@ $(function () {
             htmlEditor.setValue(local_data.html);
             $("#headInput").text(local_data.head);
             $("#title").text(local_data.title);
-            if (local_data.owner !== "anon: " + ip) {
-                $("#save").remove();
-            }
+
+            $.get("http://ipinfo.io", function (response) {
+                ip = response.ip;
+                console.log(ip);
+                if (local_data.owner !== "anon: " + ip) {
+                    $("#save").remove();
+                }
+
+            }, "jsonp");
             update();
         }
     }
 
-    if(local_data !== undefined) {
+    if (local_data !== undefined) {
         showCoBit();
     }
 

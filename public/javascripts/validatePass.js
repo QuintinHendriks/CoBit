@@ -11,8 +11,6 @@ $(function(){
             emails.push(this.email)
         });
     });
-    console.log(users);
-    console.log(emails);
 });
 
 function check(input) {

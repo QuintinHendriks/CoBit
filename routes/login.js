@@ -17,6 +17,10 @@ String.prototype.hashCode = function () {
     return hash;
 };
 
+router.get('/', function(req, res){
+   res.render("login");
+});
+
 
 var sess;
 router.post('/loginuser', function (req, res, next) {
@@ -33,8 +37,8 @@ router.post('/loginuser', function (req, res, next) {
 
             sess.username = docs[0].username;
 
-            if(sess.username) {
-                res.redirect("../"); 
+            if (sess.username) {
+                res.render("test", {userData: sess.username});
             }
             console.log(sess.username);
         }
@@ -80,9 +84,14 @@ router.post("/registerUser", function (req, res, next) {
 });
 
 
-
-router.get('/', function (req, res, next) {
-    res.render('login', {title: 'Login to CoBit'});
+router.get('/logout',function(req,res) {
+    req.session.destroy(function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect('/login/');
+        }
+    });
 });
 
 module.exports = router;
