@@ -7,10 +7,14 @@ html(lang="en")
         script(src='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js')
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/stylesheets/homeStyle.css')
+        script(src='/javascripts/home.js')
         script(type='text/javascript') var login_data = !{JSON.stringify(loginData)};
     body
         #topWrapper
             #title CoBit
-            button#registerButton.topButton Sign Up
-            button#loginButtonUser.topButton Login
-            button#newCoBitButton.topButton + New CoBit
+            a(href='/login/register' id='toSignUp')
+                button#registerButton.topButton Sign Up
+            a(href='/login' id='toLogin')
+                button#loginButtonUser.topButton Login
+            a(href='/cobit/new')
+                button#newCoBitButton.topButton + New CoBit

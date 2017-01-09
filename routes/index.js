@@ -17,6 +17,7 @@ router.get("/", function(req, res){
 
     if(sess.username){
         res.render('home', {loginData: sess.username});
+        console.log(sess.username);
     }
     else{
         res.render('home');

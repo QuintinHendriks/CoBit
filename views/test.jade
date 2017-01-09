@@ -6,7 +6,8 @@ html(lang="en")
         script(src='/javascripts/jquery/jquery-3.1.1.min.js')
         script(src='/javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js')
         script(src='/javascripts/test2.js')
-        script(type='text/javascript') var login_data = !{JSON.stringify(loginData)}; var user_data = !{JSON.stringify(userData)};
+        script(type='text/javascript').
+            var cobit_data = !{JSON.stringify(coBitData)}; var login_data = !{JSON.stringify(loginData)}; var user_data = !{JSON.stringify(userData)};
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/stylesheets/userStyle.css')
     body
@@ -19,5 +20,5 @@ html(lang="en")
             a(href='../cobit/new' id='toNewCoBit')
                 button#newCoBitButton.topButton + New CoBit
         #userFront
-            p You are logged in as #{loginData}!
-            p current user is #{userData.username}
+            p You are logged in as #{loginData}
+            p cobit data = #{JSON.stringify(coBitData)}

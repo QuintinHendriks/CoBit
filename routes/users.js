@@ -19,17 +19,27 @@ router.get("/:id", function (req, res) {
 
     var db = req.db;
     var collection = db.get('users');
+    var collection2 = db.get("coBits");
     collection.find({"username": req.params.id}, {}, function (e, docs) {
         if (e) {
             res.send(e);
         }
         else {
-            if (sess.username) {
-                res.render('test', {userData: docs[0], loginData: sess.username});
-            }
-            else {
-                res.render('test', {userData: docs[0]});
-            }
+            console.log(docs[0]);
+            collection2.find({"owner": req.params.id}, {_id: 1, owner: 1}, function (e2, docs2) {
+                console.log(docs2[0]);
+                if (e2) {
+                    res.send(e2);
+                }
+                else {
+                    if (sess.username) {
+                        res.render('test', {userData: docs[0], loginData: sess.username, coBitData: docs2});
+                    }
+                    else {
+                        res.render('test', {userData: docs[0], coBitData: docs2, loginData: false});
+                    }
+                }
+            });
         }
     });
 });
