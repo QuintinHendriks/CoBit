@@ -23,12 +23,23 @@ function check(input) {
 }
 
 function checkName(input){
-    if(users.indexOf(input.value) != -1){
-        input.setCustomValidity('Username already taken');
-    }
-    else {
-        input.setCustomValidity('');
-    }
+    var uname;
+
+    $.getJSON('/users/usercheck/'+input, function (data) {
+        $.each(data, function(){
+            uname = data;
+
+            console.log(data);
+
+            if(uname === false){
+                input.setCustomValidity('Username already taken');
+            }
+            else {
+                input.setCustomValidity('');
+            }
+
+        });
+    });
 }
 
 function checkMail(input){

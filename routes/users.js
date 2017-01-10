@@ -5,11 +5,29 @@ var express = require('express');
 var router = express.Router();
 var session = require("express-session");
 
-router.get("/userlist", function (req, res) {
+router.get("/usercheck/:uname", function (req, res){
     var db = req.db;
     var collection = db.get('users');
-    collection.find({}, {}, function (e, docs) {
-        res.json(docs);
+    collection.find({"username": req.params.uname}, {}, function (e, docs) {
+        if(docs[0]){
+            res.json(true);
+        }
+        else{
+            res.json(false);
+        }
+    });
+});
+
+router.get("/mailcheck/:email", function (req, res){
+    var db = req.db;
+    var collection = db.get('users');
+    collection.find({"email": req.params.email}, {}, function (e, docs) {
+        if(docs[0]){
+            res.json(true);
+        }
+        else{
+            res.json(false);
+        }
     });
 });
 
