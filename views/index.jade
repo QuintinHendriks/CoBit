@@ -21,6 +21,7 @@ html(lang='en')
         script(src='/javascripts/beautifyCodeMirror.js')
         link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
         script(type='text/javascript') var local_data = !{JSON.stringify(coBitData)};
+        script(type = 'text/javascript') var login_data = !{JSON.stringify(loginData)};
     body
         #topWrapper
             #title Untitled
@@ -37,7 +38,7 @@ html(lang='en')
             textarea#headValue.valuePlaceholder.hidden(name='settingsValue' form="formAddCoBit")
             textarea#libsValue.valuePlaceholder.hidden(name='libsValue' form="formAddCoBit")
             textarea#titleValue.valuePlaceholder.hidden(name='titleValue' form="formAddCoBit")
-            textarea#update.valuePlaceholder.hidden(name='update' form="formAddCoBit")
+            textarea#update.valuePlaceholder.hidden(name='updateValue' form="formAddCoBit")
             textarea#dateValue.valuePLaceholder.hidden(name='dateValue' form="formAddCoBit")
             textarea#user.valuePlaceholder.hidden(name='user' form="formAddCoBit")
         #allWrapper

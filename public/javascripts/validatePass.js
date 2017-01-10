@@ -1,15 +1,11 @@
 /**
  * Created by Quintin on 29-12-2016.
  */
-var users = [];
-var emails = [];
 
 $(function(){
-    $.getJSON('/users/userlist', function (data) {
-        $.each(data, function(){
-            users.push(this.username);
-            emails.push(this.email)
-        });
+    $.getJSON('/users/usercheck/Test', function (data) {
+        console.log("penis");
+        console.log(data[0]);
     });
 });
 
@@ -23,15 +19,16 @@ function check(input) {
 }
 
 function checkName(input){
-    var uname;
+    var test;
 
-    $.getJSON('/users/usercheck/'+input, function (data) {
+    $.getJSON('/users/usercheck/'+input.value, function (data) {
         $.each(data, function(){
-            uname = data;
+            test = this.result;
+            console.log(input.value);
 
-            console.log(data);
+            console.log(test);
 
-            if(uname === false){
+            if(test === true){
                 input.setCustomValidity('Username already taken');
             }
             else {
@@ -43,10 +40,22 @@ function checkName(input){
 }
 
 function checkMail(input){
-    if(emails.indexOf(input.value) != -1){
-        input.setCustomValidity('There already is an account registered to this e-mail');
-    }
-    else {
-        input.setCustomValidity('');
-    }
+    var test;
+
+    $.getJSON('/users/mailcheck/'+input.value, function (data) {
+        $.each(data, function(){
+            test = this.result;
+            console.log(input.value);
+
+            console.log(test);
+
+            if(test === true){
+                input.setCustomValidity('There already is an account registered to this e-mail');
+            }
+            else {
+                input.setCustomValidity('');
+            }
+
+        });
+    });
 }

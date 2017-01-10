@@ -122,6 +122,7 @@ $(function () {
     });
 
     function update() {
+        console.log("local data: " + local_data);
         var libs = [];
         $(".libraryInput").each(function () {
             if ($(this).val() !== "") {
@@ -178,19 +179,24 @@ $(function () {
                 libsVal.push($(this).val());
             }
         });
-
-        var updateVal = false;
         var jsVal = jsEditor.getValue();
         var cssVal = cssEditor.getValue();
         var htmlVal = htmlEditor.getValue();
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
-        var userVal = "anon: " + ip;
+        if (login_data == false) {
+            var userVal = "anon: " + ip;
+        }
+        else {
+            var userVal = login_data;
+        }
         var dateVal = Date.now();
-        console.log(dateVal);
 
-        if (local_data._id.length === 24) {
-            updateVal = local_data._id;
+        if (local_data._id !== undefined) {
+            var updateVal = local_data._id;
+        }
+        else {
+            var updateVal = false;
         }
 
         $("#jsValue").text(jsVal);
@@ -207,7 +213,7 @@ $(function () {
     var ip;
 
     function showCoBit() {
-        if (local_data !== undefined) {
+        if (local_data !== false) {
             console.log(local_data);
             $("#libraries").empty();
             var libsVal = local_data.libraries.split(",");
@@ -219,12 +225,22 @@ $(function () {
             htmlEditor.setValue(local_data.html);
             $("#headInput").text(local_data.head);
             $("#title").text(local_data.title);
+            var patt = new RegExp("([0-9])");
+            if (patt.test(local_data.owner)) {
+                $("#owner").text("A CoBit by anon");
+            }
+            else {
+                $("#owner").text("A CoBit by: " + local_data.owner);
+            }
+
 
             $.get("http://ipinfo.io", function (response) {
                 ip = response.ip;
                 console.log(ip);
-                if (local_data.owner !== "anon: " + ip) {
-                    $("#save").remove();
+                if (local_data.owner !== login_data) {
+                    if (local_data.owner !== "anon: " + ip) {
+                        $("#save").remove();
+                    }
                 }
 
             }, "jsonp");

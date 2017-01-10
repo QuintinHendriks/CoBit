@@ -10,10 +10,10 @@ router.get("/usercheck/:uname", function (req, res){
     var collection = db.get('users');
     collection.find({"username": req.params.uname}, {}, function (e, docs) {
         if(docs[0]){
-            res.json(true);
+            res.json([{result: true}]);
         }
         else{
-            res.json(false);
+            res.json([{result: false}]);
         }
     });
 });
@@ -23,10 +23,10 @@ router.get("/mailcheck/:email", function (req, res){
     var collection = db.get('users');
     collection.find({"email": req.params.email}, {}, function (e, docs) {
         if(docs[0]){
-            res.json(true);
+            res.json([{result: true}]);
         }
         else{
-            res.json(false);
+            res.json([{result: false}]);
         }
     });
 });

@@ -1,20 +1,28 @@
-
 var express = require('express');
 var router = express.Router();
+var session = require('express-session');
 
 /*
  * GET cobits.
  */
 
+var sess;
 router.get('/', function (req, res) {
-   res.redirect('cobit/new');
+    res.redirect('../cobit/new');
 });
 
-router.get("/new", function(req, res){
-    res.render('index.jade');
+router.get("/new", function (req, res) {
+    sess = req.session;
+    if (sess.username) {
+        res.render('index.jade', {coBitData: false, loginData: sess.username});
+    }
+    else{
+        res.render('index.jade', {coBitData: false, loginData: false} )
+    }
 });
 
 router.get("/:id", function (req, res) {
+    sess = req.session;
     var id = req.params.id;
     var db = req.db;
     var collection = db.get("coBits");
@@ -23,8 +31,13 @@ router.get("/:id", function (req, res) {
         if (e !== null || docs.length === 0) {
             res.render("404");
         }
-        else if(e === null) {
-            res.render('index.jade', {coBitData: docs[0]});
+        else if (e === null) {
+            if(sess.username){
+                res.render('index.jade', {coBitData: docs[0], loginData: sess.username});
+            }
+           else{
+                res.render('index.jade', {coBitData: docs[0], loginData: false});
+            }
         }
     });
 });
@@ -39,11 +52,13 @@ router.post('/addCoBit', function (req, res) {
     var headVal = req.body.settingsValue;
     var titleVal = req.body.titleValue;
     var libsVal = req.body.libsValue;
-    var updateVal = req.body.update;
+    var updateVal = req.body.updateValue;
     var userVal = req.body.user;
     var dateVal = req.body.dateValue;
 
     var collection = db.get('coBits');
+    console.log("update: " + updateVal);
+    console.log(updateVal);
 
     if (updateVal === 'false') {
         collection.insert({

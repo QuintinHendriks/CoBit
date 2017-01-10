@@ -25,7 +25,7 @@ router.get('/', function(req, res){
         res.render('login', {loginData: sess.username});
     }
     else{
-        res.render('login');
+        res.render('login', {loginData: false});
     }
 });
 
@@ -67,7 +67,7 @@ router.get("/register", function (req, res, next) {
         res.render('newuser', {loginData: sess.username});
     }
     else{
-        res.render('newuser');
+        res.render('newuser', {loginData: false});
     }
 });
 
