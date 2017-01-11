@@ -13,6 +13,7 @@ var index = require('./routes/index');
 var cobit = require('./routes/cobit');
 var login = require('./routes/login');
 var users = require('./routes/users');
+var verify = require('./routes/verify');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/', index);
 app.use('/cobit', cobit);
 app.use('/login', login);
 app.use('/users', users);
+app.use('/verify', verify);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

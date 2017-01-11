@@ -4,6 +4,19 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
+var nodemailer = require('nodemailer');
+
+var smtpConfig = {
+    host: 'smtp-mail.outlook.com',
+    port: 587,
+    secure: false,
+    auth: {
+        user: 'hqlh@hotmail.nl',
+        pass: 'quintin1605QHlh0411'
+    }
+};
+
+var transporter = nodemailer.createTransport(smtpConfig);
 
 //function for hashing passwords
 String.prototype.hashCode = function () {
@@ -18,13 +31,13 @@ String.prototype.hashCode = function () {
 };
 
 var sess;
-router.get('/', function(req, res){
+router.get('/', function (req, res) {
     sess = req.session;
 
-    if(sess.username){
+    if (sess.username) {
         res.render('login', {loginData: sess.username});
     }
-    else{
+    else {
         res.render('login', {loginData: false});
     }
 });
@@ -39,7 +52,7 @@ router.post('/loginuser', function (req, res, next) {
     var collection = db.get("users");
 
     collection.find({"username": uname}, {}, function (e, docs) {
-        if(docs) {
+        if (docs) {
             if (docs[0].password === pwvalue) {
                 sess = req.session;
 
@@ -50,11 +63,11 @@ router.post('/loginuser', function (req, res, next) {
                 }
                 console.log(sess.username);
             }
-            else{
+            else {
                 res.redirect("/login?success=true");
             }
         }
-        else{
+        else {
             res.redirect("/login?success=true");
         }
     });
@@ -63,10 +76,10 @@ router.post('/loginuser', function (req, res, next) {
 router.get("/register", function (req, res, next) {
     sess = req.session;
 
-    if(sess.username){
+    if (sess.username) {
         res.render('newuser', {loginData: sess.username});
     }
-    else{
+    else {
         res.render('newuser', {loginData: false});
     }
 });
@@ -80,28 +93,54 @@ router.post("/registerUser", function (req, res, next) {
     var last = req.body.lastname;
 
     var collection = db.get("users");
+    var collection2 = db.get("verification");
 
     collection.insert({
         "username": uname,
         "email": email,
         "password": password,
         "firstname": first,
-        "lastname": last
+        "lastname": last,
+        "verified": false
     }, function (err, doc) {
         if (err) {
-            // If it failed, return error
-            res.send("Not Today");
+            res.send(err);
         }
         else {
             console.log(doc);
-            // And forward to success page
-            res.redirect("../login");
+            collection2.insert({
+                "user": doc._id,
+                "email": doc.email
+            }, function (err2, doc2) {
+                if (err2) {
+                    res.send(err2);
+                }
+                else {
+                    console.log(doc2);
+
+                    var mailOptions = {
+                        from: 'hqlh@hotmail.nl',
+                        to: doc2.email,
+                        subject: 'Hello ✔',
+                        text: 'Hello world ? http://localhost:3000/verify/' + doc2._id,
+                        html: '<a href="http://localhost:3000/verify/'+doc2._id+'">Hello world ?</a>'
+                    };
+
+                    transporter.sendMail(mailOptions, function(error, info){
+                        if(error){
+                            return console.log(error);
+                        }
+                        console.log('Message sent: ' + info.response);
+
+                        res.redirect("../login");
+                    });
+                }
+            });
         }
     });
 });
 
-
-router.get('/logout',function(req,res) {
+router.get('/logout', function (req, res) {
     req.session.destroy(function (err) {
         if (err) {
             console.log(err);
@@ -110,5 +149,6 @@ router.get('/logout',function(req,res) {
         }
     });
 });
+
 
 module.exports = router;
