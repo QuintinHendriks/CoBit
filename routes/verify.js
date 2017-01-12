@@ -26,7 +26,7 @@ router.get("/:id", function (req, res) {
                 }
                 else {
                     console.log(docs2);
-                    res.redirect("../login?verify=true");
+                    res.redirect("../login?verified=true");
                 }
             });
         }

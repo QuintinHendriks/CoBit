@@ -19,15 +19,10 @@ function check(input) {
 }
 
 function checkName(input){
-    var test;
 
     $.getJSON('/users/usercheck/'+input.value, function (data) {
         $.each(data, function(){
-            test = this.result;
-            console.log(input.value);
-
-            console.log(test);
-
+            var test = this.result;
             if(test === true){
                 input.setCustomValidity('Username already taken');
             }
@@ -40,22 +35,16 @@ function checkName(input){
 }
 
 function checkMail(input){
-    var test;
 
     $.getJSON('/users/mailcheck/'+input.value, function (data) {
         $.each(data, function(){
-            test = this.result;
-            console.log(input.value);
-
-            console.log(test);
-
+            var test = this.result;
             if(test === true){
                 input.setCustomValidity('There already is an account registered to this e-mail');
             }
             else {
                 input.setCustomValidity('');
             }
-
         });
     });
 }

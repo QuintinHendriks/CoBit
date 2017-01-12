@@ -54,21 +54,26 @@ router.post('/loginuser', function (req, res, next) {
     collection.find({"username": uname}, {}, function (e, docs) {
         if (docs) {
             if (docs[0].password === pwvalue) {
-                sess = req.session;
+                if(docs[0].verified === true) {
+                    sess = req.session;
 
-                sess.username = docs[0].username;
+                    sess.username = docs[0].username;
 
-                if (sess.username) {
-                    res.redirect("../users/" + docs[0].username);
+                    if (sess.username) {
+                        res.redirect("../users/" + docs[0].username);
+                    }
+                    console.log(sess.username);
                 }
-                console.log(sess.username);
+                else{
+                    res.redirect("/login?verified=false");
+                }
             }
             else {
-                res.redirect("/login?success=true");
+                res.redirect("/login?error=true");
             }
         }
         else {
-            res.redirect("/login?success=true");
+            res.redirect("/login?error=true");
         }
     });
 });
@@ -123,7 +128,16 @@ router.post("/registerUser", function (req, res, next) {
                         to: doc2.email,
                         subject: 'Hello ✔',
                         text: 'Hello world ? http://localhost:3000/verify/' + doc2._id,
-                        html: '<a href="http://localhost:3000/verify/'+doc2._id+'">Hello world ?</a>'
+                        html: '<style>body{font-family: "Muli", sans-serif; padding:30px; text-align: left;}' +
+                        'p{font-size: 15px}' +
+                        'h1{font-size: 25px}' +
+                        '</style>' +
+                        '<h1>Dear '+doc.firstname+',</h1><br>' +
+                        '<p>Thank you for registering to CoBit</p>' +
+                        '<a href="http://localhost:3000/verify/'+doc2._id+'">Click this link to verify your account</a>' +
+                        '<p>Happy coding and see you soon!</p><br>' +
+                        '<p>Yours sincerely,</p><br>' +
+                        '<p>The CoBit team (me)</p>'
                     };
 
                     transporter.sendMail(mailOptions, function(error, info){

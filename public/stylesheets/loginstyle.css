@@ -29,18 +29,33 @@ a{
     border-bottom: 3px solid black;
 }
 
-#loginError{
+.notification{
     margin-top: 5px;
     width: auto;
     height: auto;
     padding: 4px;
-    border: 2px solid red;
+    border: 2px solid black;
     background: orange;
     color: white;
     border-radius: 15px;
 }
 
-#removeError{
+#loginError{
+    background: orange;
+    border: 2px solid red;
+}
+
+#verified{
+    background: darkgreen;
+    border: 2px solid greenyellow;
+}
+
+#verifiedNo{
+    background: orange;
+    border: 2px solid red;
+}
+
+.removeNotification{
     color: black;
     top: 3px;
     float: right;
