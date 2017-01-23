@@ -34,9 +34,11 @@ router.get("/:id", function (req, res) {
         else if (e === null) {
             if(sess.username){
                 res.render('index.jade', {coBitData: docs[0], loginData: sess.username});
+                res.end();
             }
            else{
                 res.render('index.jade', {coBitData: docs[0], loginData: false});
+                res.end();
             }
         }
     });
@@ -102,6 +104,7 @@ router.post('/addCoBit', function (req, res) {
                 console.log(doc);
                 // And forward to success page
                 res.redirect("../cobit/" + updateVal);
+                res.end();
             }
         });
     }
