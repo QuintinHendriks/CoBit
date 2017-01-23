@@ -15,11 +15,11 @@ router.get("/new", function (req, res) {
     sess = req.session;
     if (sess.username) {
         res.render('index.jade', {coBitData: false, loginData: sess.username});
-        res.end();
+        res.send("done");
     }
     else{
         res.render('index.jade', {coBitData: false, loginData: false} );
-        res.end();
+        res.send("done");
     }
 });
 
@@ -36,11 +36,11 @@ router.get("/:id", function (req, res) {
         else if (e === null) {
             if(sess.username){
                 res.render('index.jade', {coBitData: docs[0], loginData: sess.username});
-                res.end();
+                res.send("done");
             }
            else{
                 res.render('index.jade', {coBitData: docs[0], loginData: false});
-                res.end();
+                res.send("done");
             }
         }
     });
@@ -84,7 +84,7 @@ router.post('/addCoBit', function (req, res) {
                 console.log(err);
                 // And forward to success page
                 res.redirect("../cobit/" + doc._id);
-                res.end();
+                res.send("done");
             }
         });
     }
@@ -107,7 +107,7 @@ router.post('/addCoBit', function (req, res) {
                 console.log(doc);
                 // And forward to success page
                 res.redirect("../cobit/" + updateVal);
-                res.end();
+                res.send("done");
             }
         });
     }
