@@ -124,9 +124,10 @@ router.post("/registerUser", function (req, res, next) {
                     console.log(doc2);
 
                     var mailOptions = {
+                        from: "hqlh@hotmail.nl",
                         to: doc2.email,
-                        subject: 'Hello ✔',
-                        text: 'Hello world ? http://localhost:3000/verify/' + doc2._id,
+                        subject: 'Registering to CoBit',
+                        text: 'Hello world ? http://co-bit.herokuapp.com/verify/' + doc2._id,
                         html: '<style>body{font-family: "Muli", sans-serif; padding:30px; text-align: left;}' +
                         'p{font-size: 15px}' +
                         'h1{font-size: 25px}' +
