@@ -124,7 +124,6 @@ router.post("/registerUser", function (req, res, next) {
                     console.log(doc2);
 
                     var mailOptions = {
-                        from: 'hqlh@hotmail.nl',
                         to: doc2.email,
                         subject: 'Hello ✔',
                         text: 'Hello world ? http://localhost:3000/verify/' + doc2._id,
@@ -140,13 +139,13 @@ router.post("/registerUser", function (req, res, next) {
                         '<p>The CoBit team (me)</p>'
                     };
 
+                    res.redirect("../login");
+
                     transporter.sendMail(mailOptions, function(error, info){
                         if(error){
                             return console.log(error);
                         }
                         console.log('Message sent: ' + info.response);
-
-                        res.redirect("../login");
                     });
                 }
             });

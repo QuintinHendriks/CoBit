@@ -1,6 +1,6 @@
 {
   "name": "cobit",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "start": "node bin/www"
@@ -16,7 +16,20 @@
     "mongodb": "^2.2.16",
     "monk": "^3.1.3",
     "express-session": "^1.14.2",
-    "ejs": "^1.0.0"
-
-  }
+    "ejs": "^1.0.0",
+    "nodemailer": "2.7.2"
+  },
+  "description": "Maiden CodePen copy",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuintinHendriks/CoBit.git"
+  },
+  "author": "Quintin Hendriks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuintinHendriks/CoBit/issues"
+  },
+  "homepage": "https://github.com/QuintinHendriks/CoBit#readme"
 }

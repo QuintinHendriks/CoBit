@@ -171,6 +171,11 @@ $(function () {
         $("#settings").toggleClass("hidden");
     });
 
+    var ip;
+
+    $.get("http://ipinfo.io", function (response) {
+        ip = response.ip;
+    }, "jsonp");
 
     $('#save').click(function () {
         var libsVal = [];
@@ -184,7 +189,7 @@ $(function () {
         var htmlVal = htmlEditor.getValue();
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
-        if (login_data == false) {
+        if (login_data === false) {
             var userVal = "anon: " + ip;
         }
         else {
@@ -210,16 +215,18 @@ $(function () {
         $("#dateValue").text(dateVal);
     });
 
-    var ip;
-
     function showCoBit() {
         if (local_data !== false) {
             console.log(local_data);
+
             $("#libraries").empty();
+
             var libsVal = local_data.libraries.split(",");
+
             for (var i = 0; i < libsVal.length; i++) {
                 $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
             }
+
             jsEditor.setValue(local_data.js);
             cssEditor.setValue(local_data.css);
             htmlEditor.setValue(local_data.html);
@@ -229,10 +236,10 @@ $(function () {
             if (patt.test(local_data.owner)) {
                 $("#owner").text("A CoBit by anon");
             }
+
             else {
                 $("#owner").text("A CoBit by: " + local_data.owner);
             }
-
 
             $.get("http://ipinfo.io", function (response) {
                 ip = response.ip;
@@ -248,7 +255,7 @@ $(function () {
         }
     }
 
-    if (local_data !== undefined) {
+    if (local_data !== false) {
         showCoBit();
     }
 
