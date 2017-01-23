@@ -34,15 +34,9 @@ router.get("/:id", function (req, res) {
         else if (e === null) {
             if(sess.username){
                 res.render('index.jade', {coBitData: docs[0], loginData: sess.username});
-                setTimeout(function(){
-                    res.end();
-                }, 200);
             }
            else{
                 res.render('index.jade', {coBitData: docs[0], loginData: false});
-                setTimeout(function(){
-                    res.end();
-                }, 200);
             }
         }
     });

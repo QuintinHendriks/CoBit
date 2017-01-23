@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26e58f6d-b218-4555-8529-327afcf87e26" name="Default" comment="" />
+    <list default="true" id="26e58f6d-b218-4555-8529-327afcf87e26" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cobit.js" afterPath="$PROJECT_DIR$/routes/cobit.js" />
+    </list>
     <ignored path="CoBit.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -82,8 +84,8 @@
       <file leaf-file-name="cobit.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/cobit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+            <state relative-caret-position="304">
+              <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -380,7 +382,7 @@
       <workItem from="1484932856487" duration="1266000" />
       <workItem from="1485189528376" duration="4606000" />
       <workItem from="1485205423696" duration="125000" />
-      <workItem from="1485207550707" duration="4162000" />
+      <workItem from="1485207550707" duration="4603000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1482939011117</created>
@@ -568,7 +570,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223824000" />
+    <option name="totallyTimeSpent" value="224265000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -954,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cobit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+        <state relative-caret-position="304">
+          <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
           <folding />
         </state>
       </provider>
