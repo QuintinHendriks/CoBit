@@ -134,7 +134,7 @@ router.post("/registerUser", function (req, res, next) {
                         '</style>' +
                         '<h1>Dear '+doc.firstname+',</h1><br>' +
                         '<p>Thank you for registering to CoBit</p>' +
-                        '<a href="http://localhost:3000/verify/'+doc2._id+'">Click this link to verify your account</a>' +
+                        '<a href="http://co-bit.herokuapp.com/verify/'+doc2._id+'">Click this link to verify your account</a>' +
                         '<p>Happy coding and see you soon!</p><br>' +
                         '<p>Yours sincerely,</p><br>' +
                         '<p>The CoBit team (me)</p>'
