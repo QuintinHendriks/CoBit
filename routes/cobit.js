@@ -34,11 +34,15 @@ router.get("/:id", function (req, res) {
         else if (e === null) {
             if(sess.username){
                 res.render('index.jade', {coBitData: docs[0], loginData: sess.username});
-                res.end();
+                setTimeout(function(){
+                    res.end();
+                }, 200);
             }
            else{
                 res.render('index.jade', {coBitData: docs[0], loginData: false});
-                res.end();
+                setTimeout(function(){
+                    res.end();
+                }, 200);
             }
         }
     });
@@ -82,6 +86,9 @@ router.post('/addCoBit', function (req, res) {
                 console.log(err);
                 // And forward to success page
                 res.redirect("../cobit/" + doc._id);
+                setTimeout(function(){
+                    res.end();
+                }, 200);
             }
         });
     }
@@ -104,7 +111,9 @@ router.post('/addCoBit', function (req, res) {
                 console.log(doc);
                 // And forward to success page
                 res.redirect("../cobit/" + updateVal);
-                res.end();
+                setTimeout(function(){
+                    res.end();
+                }, 200);
             }
         });
     }

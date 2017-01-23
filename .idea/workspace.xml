@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e58f6d-b218-4555-8529-327afcf87e26" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/login.js" afterPath="$PROJECT_DIR$/routes/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cobit.js" afterPath="$PROJECT_DIR$/routes/cobit.js" />
     </list>
     <ignored path="CoBit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +31,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cobit.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cobit.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/cobit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+            <state relative-caret-position="620">
+              <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -176,8 +176,8 @@
         <option value="$PROJECT_DIR$/public/javascripts/test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/routes/cobit.js" />
         <option value="$PROJECT_DIR$/routes/login.js" />
+        <option value="$PROJECT_DIR$/routes/cobit.js" />
       </list>
     </option>
   </component>
@@ -382,7 +382,7 @@
       <workItem from="1484932856487" duration="1266000" />
       <workItem from="1485189528376" duration="4606000" />
       <workItem from="1485205423696" duration="125000" />
-      <workItem from="1485207550707" duration="3409000" />
+      <workItem from="1485207550707" duration="3958000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1482939011117</created>
@@ -570,7 +570,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223071000" />
+    <option name="totallyTimeSpent" value="223620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,18 +946,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/cobit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="138" column="55" selection-start-line="138" selection-start-column="55" selection-end-line="138" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/cobit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
           <folding />
         </state>
       </provider>
