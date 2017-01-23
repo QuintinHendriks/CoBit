@@ -173,7 +173,7 @@ $(function () {
 
     var ip;
 
-    $.get("http://ipinfo.io", function (response) {
+    $.get("https://ipinfo.io", function (response) {
         ip = response.ip;
     }, "jsonp");
 
@@ -241,7 +241,7 @@ $(function () {
                 $("#owner").text("A CoBit by: " + local_data.owner);
             }
 
-            $.get("http://ipinfo.io", function (response) {
+            $.get("https://ipinfo.io", function (response) {
                 ip = response.ip;
                 console.log(ip);
                 if (local_data.owner !== login_data) {
