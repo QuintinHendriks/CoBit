@@ -10,11 +10,12 @@ html(lang="en")
             var cobit_data = !{JSON.stringify(coBitData)}; var login_data = !{JSON.stringify(loginData)}; var user_data = !{JSON.stringify(userData)};
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/stylesheets/userStyle.css')
+        link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     body
         #topWrapper
-            #title CoBit
-            a(href='../login/register' id='toSignUp')
-                button#registerButton.topButton Sign Up
+            a(href='../' id='toHome')
+                i(class='fa fa-code' style='color: lightgrey; font-size:50px; height:30px; float:left;' aria-hidden="true")
+                #title CoBit
             a(href='../login' id='toLogin')
                 button#loginButtonUser.topButton Login
             a(href='../cobit/new' id='toNewCoBit')

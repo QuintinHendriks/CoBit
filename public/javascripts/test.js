@@ -112,6 +112,13 @@ $(function () {
         }
     });
 
+    if (login_data) {
+        $("#toLogin").replaceWith("<a href='../login/logout'><button id='registerButton' class='topButton'>logout</button></a>");
+        $("#toSignUp").remove();
+    }
+
+    console.log(local_data);
+
     $("#addLibrary").on("click", function () {
         $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
     });
