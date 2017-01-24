@@ -18,6 +18,7 @@ body {
 
 #topWrapper {
     position: absolute;
+    left: 0;
     width: 100vw;
     height: 50px;
     background-image: url(../backgrounds/escheresque_ste.png);
