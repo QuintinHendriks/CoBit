@@ -252,6 +252,7 @@ $(function () {
 
             }, "jsonp");
             update();
+            $("#run").trigger();
         }
     }
 
