@@ -252,6 +252,9 @@ $(function () {
 
             }, "jsonp");
             update();
+            setTimeout(function(){
+                window.stop();
+            }, 300);
             $("#run").trigger("click");
         }
     }
