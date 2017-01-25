@@ -341,6 +341,7 @@ body {
 }
 
 #backgroundContainer{
+    overflow: hidden;
     border:none;
     width: 100vw;
     height: 50vh;
