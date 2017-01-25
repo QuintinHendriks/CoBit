@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        title !{coBitData.title}
+        script(type='text/javascript').
+            var cobit_data = !{JSON.stringify(coBitData)}; var login_data = !{JSON.stringify(loginData)}; var user_data = !{JSON.stringify(userData)};
+        style
+            !{coBitData.css}
+        !{coBitData.head}
+    body
+        !{coBitData.html}
+    each item in coBitData.libraries.split(",")
+        script(src=item)
+    script
+        !{coBitData.js}

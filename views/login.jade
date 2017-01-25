@@ -13,7 +13,9 @@ html(lang="en")
         script(type='text/javascript') var login_data = !{JSON.stringify(loginData)};
     body
         #topWrapper
-            #title CoBit
+            a(href='../' id='toHome')
+                i(class='fa fa-code' style='color: lightgrey; font-size:50px; height:30px; float:left;' aria-hidden="true")
+                #title CoBit
             a(href='../login/register' id='toSignUp')
                 button#registerButton.topButton Sign Up
             a(href='../cobit/new')

@@ -46,6 +46,29 @@ router.get("/:id", function (req, res) {
     });
 });
 
+router.get("/:id/debug", function (req, res) {
+    sess = req.session;
+    var id = req.params.id;
+    var db = req.db;
+    var collection = db.get("coBits");
+
+    collection.find({"_id": id}, {}, function (e, docs) {
+        if (docs.length === 0) {
+            res.render("404");
+        }
+        else if (e === null) {
+            if(sess.username){
+                res.render('debug.jade', {coBitData: docs[0], loginData: sess.username});
+                res.send("done");
+            }
+            else{
+                res.render('debug.jade', {coBitData: docs[0], loginData: false});
+                res.send("done");
+            }
+        }
+    });
+});
+
 router.post('/addCoBit', function (req, res) {
 
     var db = req.db;

@@ -36,6 +36,8 @@ body {
     float: right;
     margin-right: 10px;
     margin-top: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .settingsButton {
@@ -67,7 +69,7 @@ body {
     font-family: 'Muli', sans-serif;
     font-size: 15px;
     top: 28px;
-    left: 10px;
+    left: 65px;
 }
 
 #editIco {
@@ -332,4 +334,14 @@ body {
 
 #registerLink {
     float: right;
+}
+
+#homeHeader{
+    margin-top: 53px;
+}
+
+#backgroundContainer{
+    border:none;
+    width: 100vw;
+    height: 50vh;
 }
