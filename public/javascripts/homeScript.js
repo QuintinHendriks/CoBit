@@ -6,7 +6,7 @@ $(function () {
     var random = Math.floor(Math.random() * backgrounds.length);
 
     function newBackground() {
-        document.getElementById("backgroundContainer").src = "http://localhost:5000/cobit/" + backgrounds[random] + "/debug";
+        document.getElementById("backgroundContainer").src = "https://co-bit.herokuapp.com/cobit/" + backgrounds[random] + "/debug";
         document.getElementById.contentWindow.location.reload();
     }
 
