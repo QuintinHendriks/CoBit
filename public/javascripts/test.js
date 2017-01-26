@@ -57,6 +57,9 @@ $(function () {
         scroll: false,
         drag: function () {
             $("#editorWrapper").width(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)));
+            htmlEditor.setSize(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)), null);
+            cssEditor.setSize(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)), null);
+            jsEditor.setSize(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)), null);
             $("#resultWrapper").width(Math.floor($(window).width() - $('#resizer').offset().left - 10));
             $("#widthShow").text($("#resultWrapper").width() + "px");
         },
@@ -66,6 +69,9 @@ $(function () {
             $("#result").css("z-index", "-1");
         },
         stop: function () {
+            htmlEditor.setSize(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)), null);
+            cssEditor.setSize(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)), null);
+            jsEditor.setSize(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)), null);
             $("#widthShow").css("visibility", "hidden");
             $("#resultWrapper").find(".overlay").css("visibility", "hidden");
             $("#editorWrapper").width(Math.floor($(window).width() - ($(window).width() - $('#resizer').offset().left)));
