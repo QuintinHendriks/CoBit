@@ -32,12 +32,20 @@ a{
 #homeTitle{
     font-size: 40px;
     color: white;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand:700', sans-serif;
     text-shadow: 5px 5px 20px #000;
 }
 
+#homeSubtitle{
+    font-size: 25px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 5px 5px 20px #000;
+    padding: 20px 200px;
+}
+
 #homeLogo{
-    font-size: 60px;
+    font-size: 100px;
     color: white;
     margin-top: 5px;
     text-shadow: 5px 5px 20px #000;
