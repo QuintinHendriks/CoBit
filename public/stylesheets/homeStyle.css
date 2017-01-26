@@ -7,39 +7,39 @@ body {
     align-items: center;
 }
 
-#loginWrapper p{
+#loginWrapper p {
     color: lightgrey;
     display: inline;
 }
 
-#loginWrapper h1{
+#loginWrapper h1 {
     color: lightgray;
 }
 
-a{
+a {
     color: lightgray;
     display: inline;
 }
 
-#title{
+#title {
     font-family: 'Quicksand', sans-serif;
     font-size: 40px !important;
     float: left !important;
 }
 
-#topWrapper{
+#topWrapper {
     background: #313131;
     border-bottom: 3px solid #393B3C;
 }
 
-#homeTitle{
+#homeTitle {
     font-size: 40px;
     color: white;
     font-family: 'Quicksand', sans-serif;
     text-shadow: 5px 5px 20px #000;
 }
 
-#homeSubtitle{
+#homeSubtitle {
     font-size: 25px;
     color: white;
     font-family: 'Quicksand:400', sans-serif;
@@ -47,18 +47,18 @@ a{
     padding: 20px 200px;
 }
 
-#homeLogo{
+#homeLogo {
     font-size: 100px;
     color: white;
     margin-top: 5px;
     text-shadow: 5px 5px 20px #000;
 }
 
-#homeHeader{
+#homeHeader {
     margin-top: 53px;
 }
 
-#homeHeaderTitle{
+#homeHeaderTitle {
     position: absolute;
     height: 60px;
     margin-left: auto;
@@ -70,10 +70,49 @@ a{
     text-align: center;
 }
 
-#backgroundContainer{
+#backgroundContainer {
     overflow: hidden;
-    border:none;
+    border: none;
     width: 100vw;
     height: 50vh;
     pointer-events: none;
+}
+
+#headerButtonsWrapper {
+    width: 100vw;
+    height: 80px;
+    position: absolute;
+    top: calc(53px + 50vh - 80px);
+}
+
+.headerButton {
+    width: 25vw;
+    text-align: center;
+    display: table-cell;
+    padding: auto;
+    height: 80px;
+    vertical-align: middle;
+}
+
+.headerButtonText{
+    font-size: 30px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 3px 3px 15px #000;
+}
+
+#headerButtonLogin {
+    background: rgba(255, 19, 10, 0.5);
+}
+
+#headerButtonSignUp {
+    background: rgba(163, 3, 255, 0.5);
+}
+
+#headerButtonCoBits {
+    background: rgba(129, 19, 255, 0.5);
+}
+
+#headerButtonAbout{
+    background: rgba(0, 0, 255, 0.56);
 }
