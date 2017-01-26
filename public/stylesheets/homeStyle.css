@@ -28,3 +28,41 @@ a{
     background: #313131;
     border-bottom: 3px solid #393B3C;
 }
+
+#homeTitle{
+    font-size: 40px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 5px 5px 20px #000;
+}
+
+#homeLogo{
+    font-size: 60px;
+    color: white;
+    margin-top: 5px;
+    text-shadow: 5px 5px 20px #000;
+}
+
+#homeHeader{
+    margin-top: 53px;
+}
+
+#homeHeaderTitle{
+    position: absolute;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 1000px;
+    top: 100px;
+    text-align: center;
+}
+
+#backgroundContainer{
+    overflow: hidden;
+    border:none;
+    width: 100vw;
+    height: 50vh;
+    pointer-events: none;
+}

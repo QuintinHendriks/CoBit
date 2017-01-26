@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700&subset=latin-ext');
 
 body {
     margin: 0;
@@ -29,7 +30,7 @@ body {
     background: lightseagreen;
     border-radius: 5px;
     border: none;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     width: auto;
     height: 40px;
@@ -54,7 +55,7 @@ body {
 }
 
 #title {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 25px;
     float: left;
     color: lightgrey;
@@ -66,7 +67,7 @@ body {
     position: absolute;
     float: left;
     color: lightgrey;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 15px;
     top: 28px;
     left: 65px;
@@ -106,7 +107,7 @@ body {
 
 #settings {
     text-align: center;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     position: fixed;
     width: 700px;
     height: 600px;
@@ -173,7 +174,7 @@ body {
     background: lightgray;
     width: calc(100% - 10px);
     z-index: 10000;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     padding-left: 10px;
     box-shadow: 0 3px 3px -2px white;
@@ -186,7 +187,7 @@ body {
     margin-top: 5px;
     border-radius: 3px;
     background: lightseagreen;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     width: 50px;
     text-align: center;
     border: none;
@@ -276,7 +277,7 @@ body {
 }
 
 #topLogin {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 50px;
     float: left;
     display: inline;
@@ -293,7 +294,7 @@ body {
     float: right;
     height: 330px;
     width: 225px;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     border-left: thick solid grey;
     padding-left: 30px;
 }
@@ -334,15 +335,4 @@ body {
 
 #registerLink {
     float: right;
-}
-
-#homeHeader{
-    margin-top: 53px;
-}
-
-#backgroundContainer{
-    overflow: hidden;
-    border:none;
-    width: 100vw;
-    height: 50vh;
 }
