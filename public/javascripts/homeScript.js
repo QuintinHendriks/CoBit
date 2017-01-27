@@ -7,8 +7,9 @@ $(function () {
 
     function newBackground() {
         document.getElementById("backgroundContainer").src = "https://co-bit.herokuapp.com/cobit/" + backgrounds[random] + "/debug";
-        document.getElementById.contentWindow.location.reload();
     }
 
     newBackground();
+    
+    console.log(cobit_data);
 });
