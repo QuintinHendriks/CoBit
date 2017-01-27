@@ -157,9 +157,10 @@ $(function () {
         iframe.src = "about:blank";
         var timeout = setTimeout(function () {
             iframe.contentDocument.write("<!DOCTYPE html>\
-         <html lang='en'>\
-         <head>" + headVal +
-                "<style>" + cssVal +
+            <html lang='en'>\
+            <head>" + headVal +
+                "<style>body{margin: 0;}"
+                + cssVal +
                 "</style>\
                 </head>\
                 <body>" + htmlVal +

@@ -5,7 +5,7 @@ html(lang="en")
         title !{coBitData.title}
         script(type='text/javascript').
             var cobit_data = !{JSON.stringify(coBitData)}; var login_data = !{JSON.stringify(loginData)}; var user_data = !{JSON.stringify(userData)};
-        style
+        style body{ margin: 0}
             !{coBitData.css}
         !{coBitData.head}
     body
