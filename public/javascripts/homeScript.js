@@ -10,6 +10,18 @@ $(function () {
     }
 
     newBackground();
-    
+
+    $("#headerButtonLogin").on('click', function(){
+        window.location.href = "https://co-bit.herokuapp.com/login";
+    });
+
+    $("#headerButtonSignUp").on('click', function(){
+        window.location.href = "https://co-bit.herokuapp.com/login/register";
+    });
+
     console.log(cobit_data);
+
+    $("headerButtonCoBits").on("click", function(){
+
+    });
 });

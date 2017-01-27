@@ -22,23 +22,28 @@ router.get("/", function(req, res) {
     var collection = db.get("coBits");
 
     collection.find({}, {
-        "$oid": 1
+        "js": false,
+        _id: true
     }, function(e, docs) {
         if (e) {
             res.render("404");
         }
         else if (e === null) {
+            var result = [];
+            docs.forEach(function(element){
+                result.push(element._id);
+            });
             if (sess.username) {
                 res.render('home', {
                     loginData: sess.username,
-                    coBitData: docs
+                    coBitData: result
                 });
                 console.log(sess.username);
             }
             else {
                 res.render('home', {
                     loginData: false,
-                    coBitData: docs
+                    coBitData: result
                 });
             }
         }
