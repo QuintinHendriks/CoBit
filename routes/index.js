@@ -22,7 +22,7 @@ router.get("/", function(req, res) {
     var collection = db.get("coBits");
 
     collection.find({}, {
-        "_id": 1
+        "$oid": 1
     }, function(e, docs) {
         if (e) {
             res.render("404");

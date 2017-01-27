@@ -57,7 +57,7 @@ a {
     position: relative;
     left: 0;
     margin-top: 53px;
-    height: 50vh;
+    height: 100vh;
 }
 
 #homeHeaderTitle {
@@ -76,14 +76,13 @@ a {
     overflow: hidden;
     border: none;
     width: 100vw;
-    height: 50vh;
-    pointer-events: none;
+    height: 100vh;
 }
 
 #headerButtonsWrapper {
     width: 100vw;
     height: 9vh;
-    position: absolute;
+    position: fixed;
     bottom:0;
 }
 
@@ -104,16 +103,36 @@ a {
 
 #headerButtonLogin {
     background: rgba(255, 19, 10, 0.5);
+    transition: background .2s ease-in-out;
 }
 
 #headerButtonSignUp {
     background: rgba(163, 3, 255, 0.5);
+    transition: background .2s ease-in-out;
 }
 
 #headerButtonCoBits {
     background: rgba(129, 19, 255, 0.5);
+    transition: background .2s ease-in-out;
 }
 
 #headerButtonAbout {
     background: rgba(0, 0, 255, 0.56);
+    transition: background .2s ease-in-out;
+}
+
+#headerButtonLogin:hover {
+    background: rgba(255, 19, 10, 0.9);
+}
+
+#headerButtonSignUp:hover {
+    background: rgba(163, 3, 255, 0.9);
+}
+
+#headerButtonCoBits:hover {
+    background: rgba(129, 19, 255, 0.9);
+}
+
+#headerButtonAbout:hover {
+    background: rgba(0, 0, 255, 0.9);
 }
