@@ -42,6 +42,9 @@ router.get("/:id", function (req, res) {
         if (e) {
             res.send(e);
         }
+        else if(docs.length === 0){
+            res.render("404");
+        }
         else {
             console.log(docs[0]);
             collection2.find({"owner": req.params.id}, {_id: 1, owner: 1}, function (e2, docs2) {
@@ -50,11 +53,15 @@ router.get("/:id", function (req, res) {
                     res.send(e2);
                 }
                 else {
+                    var result = [];
+                    docs2.forEach(function(document){
+                        result.push(document._id);
+                    });
                     if (sess.username) {
-                        res.render('test', {userData: docs[0], loginData: sess.username, coBitData: docs2});
+                        res.render('test', {userData: docs[0], loginData: sess.username, coBitData: result});
                     }
                     else {
-                        res.render('test', {userData: docs[0], coBitData: docs2, loginData: false});
+                        res.render('test', {userData: docs[0], coBitData: result, loginData: false});
                     }
                 }
             });

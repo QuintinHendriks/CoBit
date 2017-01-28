@@ -2,13 +2,6 @@ var express = require('express');
 var router = express.Router();
 var session = require('express-session');
 
-/* GET Hello World page. */
-router.get('/helloworld', function(req, res) {
-    res.render('helloworld', {
-        title: 'Hello, World!'
-    });
-});
-
 router.get('/test', function(req, res) {
     res.render('test', {
         title: 'Hello, World!'
@@ -21,10 +14,7 @@ router.get("/", function(req, res) {
     var db = req.db;
     var collection = db.get("coBits");
 
-    collection.find({}, {
-        "js": false,
-        _id: true
-    }, function(e, docs) {
+    collection.find({}, {}, function(e, docs) {
         if (e) {
             res.render("404");
         }
