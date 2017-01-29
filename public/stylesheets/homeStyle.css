@@ -91,6 +91,19 @@ a {
     height: 9vh;
     position: fixed;
     bottom: 0;
+    -webkit-transition: transform .4s ease-in-out;
+    -moz-transition: transform .4s ease-in-out;
+    -ms-transition: transform .4s ease-in-out;
+    -o-transition: transform .4s ease-in-out;
+    transition: transform .4s ease-in-out;
+}
+
+#headerButtonsWrapper:not(:hover){
+    transform: translateY(6vh);
+}
+
+#headerButtonsWrapper:not(:hover) .headerButtonText{
+    opacity: .4;
 }
 
 .headerButton {
@@ -118,6 +131,10 @@ a {
     font-family: 'Quicksand', sans-serif;
     text-shadow: 3px 3px 15px #000;
     cursor: default;
+    -webkit-transition: opacity .4s ease-in-out;
+    -moz-transition: opacity .4s ease-in-out;
+    -o-transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out;
 }
 
 .headerButtonText:hover{
