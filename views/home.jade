@@ -24,7 +24,10 @@ html(lang="en")
             a(href='/cobit/new')
                 button#newCoBitButton.topButton + New CoBit
         #homeHeader
-            iframe#backgroundContainer
+            #iframeLoader
+                div
+                    i.fa.fa-circle-o-notch#loadingIcon
+            iframe#backgroundContainer(onload="document.getElementById('loadingIcon').style.display='none';")
             #homeHeaderTitle
                 i(class='fa fa-code' id='homeLogo' aria-hidden="true")
                 #homeTitle &nbsp;CoBit is a place for the front end developer to create, test and design.

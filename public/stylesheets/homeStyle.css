@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:700');
 
 body {
-    background-image: url(../backgrounds/escheresque_ste_@2X.png) !important;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +73,64 @@ a {
     text-align: center;
 }
 
+#iframeLoader {
+    position: absolute;
+    margin: 0 auto;
+}
+
+#iframeLoader div {
+    display: table-cell;
+    width: 100vw;
+    height: calc(100vh - 53px);
+    background: rgba(0,0,0,0);
+    text-align: center;
+    vertical-align: middle;
+}
+
+#loadingIcon{
+    font-size: 60px;
+    color: white;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+#loadingIcon {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}
+
 #backgroundContainer {
     overflow: hidden;
     border: none;
@@ -80,7 +138,7 @@ a {
     height: calc(100vh - 53px);
 }
 
-#coBitContainer{
+#coBitContainer {
     width: 100vw;
     height: calc(100vh - 53px);
 }

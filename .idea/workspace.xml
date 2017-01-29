@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e58f6d-b218-4555-8529-327afcf87e26" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/siteFrames.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/debug.jade" afterPath="$PROJECT_DIR$/views/debug.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/homeScript.js" afterPath="$PROJECT_DIR$/public/javascripts/homeScript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/homeStyle.css" afterPath="$PROJECT_DIR$/public/stylesheets/homeStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.jade" afterPath="$PROJECT_DIR$/views/home.jade" />
     </list>
     <ignored path="CoBit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="homeStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/homeStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="574">
+              <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="167">
@@ -85,6 +85,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1728">
+              <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/test.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jade" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/home.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="8" selection-end-column="65" />
+            <state relative-caret-position="455">
+              <caret line="29" column="83" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -108,8 +118,8 @@
       <file leaf-file-name="homeScript.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/homeScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="32">
+              <caret line="4" column="216" selection-start-line="4" selection-start-column="216" selection-end-line="4" selection-end-column="216" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -165,11 +175,7 @@
         <option value="$PROJECT_DIR$/views/newuser.jade" />
         <option value="$PROJECT_DIR$/views/login.jade" />
         <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/public/javascripts/test.js" />
-        <option value="$PROJECT_DIR$/views/home.jade" />
-        <option value="$PROJECT_DIR$/public/stylesheets/homeStyle.css" />
-        <option value="$PROJECT_DIR$/public/javascripts/homeScript.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/views/siteFrames.jade" />
         <option value="$PROJECT_DIR$/public/javascripts/debugScript.js" />
@@ -177,6 +183,10 @@
         <option value="$PROJECT_DIR$/views/debug.jade" />
         <option value="$PROJECT_DIR$/routes/cobit.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/public/javascripts/homeScript.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/homeStyle.css" />
+        <option value="$PROJECT_DIR$/views/home.jade" />
       </list>
     </option>
   </component>
@@ -445,7 +455,7 @@
       <workItem from="1484932856487" duration="1266000" />
       <workItem from="1485189528376" duration="4606000" />
       <workItem from="1485205423696" duration="125000" />
-      <workItem from="1485207550707" duration="64570000" />
+      <workItem from="1485207550707" duration="70832000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1482939011117</created>
@@ -647,7 +657,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284232000" />
+    <option name="totallyTimeSpent" value="290494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -956,14 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="299" column="27" selection-start-line="299" selection-start-column="27" selection-end-line="299" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="653">
@@ -996,24 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/homeStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/homeScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -1030,22 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="8" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/cobit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="64" column="78" selection-start-line="64" selection-start-column="78" selection-end-line="64" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/debugStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1054,10 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/debug.jade">
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="167">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1070,10 +1038,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/routes/cobit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="343">
+          <caret line="64" column="78" selection-start-line="64" selection-start-column="78" selection-end-line="64" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/debug.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/homeScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="4" column="216" selection-start-line="4" selection-start-column="216" selection-end-line="4" selection-end-column="216" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/homeStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="29" column="83" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
           <folding />
         </state>
       </provider>
