@@ -78,6 +78,7 @@ a {
     width: 70vw;
     top: 15px;
     text-align: center;
+    pointer-events: none;
 }
 
 #backgroundContainer {

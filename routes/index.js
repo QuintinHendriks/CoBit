@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
     var db = req.db;
     var collection = db.get("coBits");
 
-    collection.find({}, {}, function(e, docs) {
+    collection.find({}, {sort: {"date": -1}}, function(e, docs) {
         if (e) {
             res.render("404");
         }
