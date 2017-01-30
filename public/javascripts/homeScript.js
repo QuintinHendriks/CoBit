@@ -25,10 +25,18 @@ $(function () {
 
 
     for (var i = n; i < 6 * (n + 1); i++) {
-        $("#coBitsContainer").append("<iframe class='coBitPreview' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i] + "/debug'>");
+        $("#coBitsWrapper").append("<iframe class='coBitPreview' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i] + "/debug'>");
     }
 
     $("#headerButtonCoBits").on("click", function () {
             $("#homeHeader").animate({scrollLeft: $(window).width()}, 800);
+    });
+
+    $("#toHome").on('click', function(){
+        $("#homeHeader").animate({scrollLeft: 0}, 800);
+    });
+
+    $(".coBitPreview").on('click', function(){
+
     });
 });

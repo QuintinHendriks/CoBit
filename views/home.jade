@@ -14,7 +14,7 @@ html(lang="en")
         script(src='/javascripts/homeScript.js')
     body
         #topWrapper
-            a(href='../' id='toHome')
+            a(id='toHome')
                 i(class='fa fa-code' style='color: lightgrey; font-size:50px; height:30px; float:left;' aria-hidden="true")
                 #title CoBit
             a(href='/login/register' id='toSignUp')
@@ -29,7 +29,8 @@ html(lang="en")
                 i(class='fa fa-code' id='homeLogo' aria-hidden="true")
                 #homeTitle &nbsp;CoBit is a place for the front end developer to create, test and design.
                 #homeSubtitle Share your creations and get feedback, find inspiration for your next project and connect with other coders. Happy coding!
-            #coBitsContainer.page0
+            #coBitsContainer.page0 Recent CoBits
+                #coBitsWrapper
 
             #headerButtonsWrapper
                 #headerButtonLogin.headerButton

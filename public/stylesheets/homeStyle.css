@@ -33,6 +33,10 @@ a {
     position: fixed;
 }
 
+#toHome{
+    cursor: pointer;
+}
+
 #homeTitle {
     font-size: 3.5vw;
     color: white;
@@ -95,13 +99,24 @@ a {
     height: calc(100vh - 53px);
     position: relative;
     left: 100vw;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+#coBitsWrapper{
+    margin: 0 auto;
+    width: calc(556px * 3);
 }
 
 .coBitPreview{
-    width:500px;
-    height:400px;
+    width:550px;
+    height:350px;
     margin: 0;
     padding: 0;
+    background: white;
+    border: none;
 }
 
 #headerButtonsWrapper {
