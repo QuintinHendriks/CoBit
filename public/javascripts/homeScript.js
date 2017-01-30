@@ -20,10 +20,11 @@ $(function () {
     });
 
     console.log(cobit_data);
-
-    $("#headerButtonCoBits").on("click", function(){
-        var n = $("#coBitsContainer").attr("class").split("page")[1];
-        console.log(n);
-    });
     
+    var n = $("#coBitsContainer").attr("class").split("page")[1];
+
+    
+    for(var i = n; i<5*(n + 1); i++){
+       $("#coBitsContainer").append("<iframe class='coBitPreview' src='co-bit.herokuapp.com/cobit/"+cobit_data[i]+"/debug'>"); 
+    }
 });
