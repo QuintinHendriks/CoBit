@@ -21,7 +21,9 @@ $(function () {
 
     console.log(cobit_data);
 
-    $("headerButtonCoBits").on("click", function(){
-
+    $("#headerButtonCoBits").on("click", function(){
+        var n = $("#coBitsContainer").attr("class").split("page")[1];
+        console.log(n);
     });
+    
 });
