@@ -11,20 +11,24 @@ $(function () {
 
     newBackground();
 
-    $("#headerButtonLogin").on('click', function(){
+    $("#headerButtonLogin").on('click', function () {
         window.location.href = "https://co-bit.herokuapp.com/login";
     });
 
-    $("#headerButtonSignUp").on('click', function(){
+    $("#headerButtonSignUp").on('click', function () {
         window.location.href = "https://co-bit.herokuapp.com/login/register";
     });
 
     console.log(cobit_data);
-    
+
     var n = $("#coBitsContainer").attr("class").split("page")[1];
 
-    
-    for(var i = n; i<5*(n + 1); i++){
-       $("#coBitsContainer").append("<iframe class='coBitPreview' src='co-bit.herokuapp.com/cobit/"+cobit_data[i]+"/debug'>"); 
+
+    for (var i = n; i < 6 * (n + 1); i++) {
+        $("#coBitsContainer").append("<iframe class='coBitPreview' src='https://www.co-bit.herokuapp.com/cobit/" + cobit_data[i] + "/debug'>");
     }
+
+    $("#headerButtonCoBits").on("click", function () {
+            $("#homeHeader").animate({scrollLeft: $(window).width()}, 800);
+    });
 });

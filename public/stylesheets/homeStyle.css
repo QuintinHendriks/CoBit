@@ -30,6 +30,7 @@ a {
 #topWrapper {
     background: #313131;
     border-bottom: 3px solid #393B3C;
+    position: fixed;
 }
 
 #homeTitle {
@@ -59,6 +60,12 @@ a {
     left: 0;
     top: 53px;
     height: calc(100vh - 53px);
+    width: 200vw;
+    overflow: scroll;
+}
+
+#homeHeader::-webkit-scrollbar {
+    display: none;
 }
 
 #homeHeaderTitle {
@@ -73,22 +80,27 @@ a {
     text-align: center;
 }
 
-
 #backgroundContainer {
+    left: 0;
     overflow: hidden;
     border: none;
     width: 100vw;
     height: calc(100vh - 53px);
+    position: absolute;
 }
 
-#coBitContainer {
+#coBitsContainer {
     width: 100vw;
     height: calc(100vh - 53px);
+    position: relative;
+    left: 100vw;
 }
 
 .coBitPreview{
     width:500px;
     height:400px;
+    margin: 0;
+    padding: 0;
 }
 
 #headerButtonsWrapper {
