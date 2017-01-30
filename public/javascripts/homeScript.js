@@ -25,7 +25,7 @@ $(function () {
 
 
     for (var i = n; i < 6 * (n + 1); i++) {
-        $("#coBitsContainer").append("<iframe class='coBitPreview' src='https://www.co-bit.herokuapp.com/cobit/" + cobit_data[i] + "/debug'>");
+        $("#coBitsContainer").append("<iframe class='coBitPreview' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i] + "/debug'>");
     }
 
     $("#headerButtonCoBits").on("click", function () {
