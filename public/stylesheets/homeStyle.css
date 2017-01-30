@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:700');
 
 body {
-    background: black;
+    background: #191919;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,16 +107,35 @@ a {
 
 #coBitsWrapper{
     margin: 0 auto;
-    width: calc(556px * 3);
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    overflow: scroll;
 }
 
 .coBitPreview{
     width:550px;
     height:350px;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
     background: white;
-    border: none;
+    border: 5px solid grey;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 781;
+}
+
+.coBitPreviewFrame{
+    width: 100%;
+    border:none;
+    height: 85%;
+}
+.toPreview{
+    color: grey;
+    z-index:999;
+    font-size:
 }
 
 #headerButtonsWrapper {

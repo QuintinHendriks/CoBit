@@ -21,7 +21,7 @@ router.get("/", function(req, res) {
         else if (e === null) {
             var result = [];
             docs.forEach(function(element){
-                result.push(element._id);
+                result.push({id: element._id, title: element.title, owner: element.owner});
             });
             if (sess.username) {
                 res.render('home', {
