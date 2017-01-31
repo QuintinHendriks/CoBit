@@ -103,6 +103,7 @@ a {
     color: white;
     font-size: 50px;
     text-align: center;
+    padding:0;
 }
 
 #coBitsWrapper{
@@ -112,6 +113,7 @@ a {
     flex-wrap: wrap;
     height: 80vh;
     overflow: scroll;
+    border-bottom: 5px solid lightseagreen;
 }
 
 .coBitPreview{
@@ -124,7 +126,6 @@ a {
     -moz-border-radius: 5px;
     border-radius: 5px;
     overflow: hidden;
-    z-index: 781;
     margin-top: 25px;
 }
 
