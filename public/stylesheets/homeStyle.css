@@ -103,7 +103,7 @@ a {
     color: white;
     font-size: 50px;
     text-align: center;
-    padding:0;
+    padding-bottom:0;
 }
 
 #coBitsWrapper{
@@ -113,7 +113,11 @@ a {
     flex-wrap: wrap;
     height: 80vh;
     overflow: scroll;
-    border-bottom: 5px solid lightseagreen;
+    border-top: 6px solid lightseagreen;
+    -webkit-box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    -moz-box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    line-height: 30px;
 }
 
 .coBitPreview{
@@ -132,14 +136,18 @@ a {
 .coBitPreviewFrame{
     width: 100%;
     border: none;
-    height: 85%;
+    height: calc(85% + 5px);
     margin:0;
     overflow: hidden;
 }
 
-.coBitPreviewFrame:hover{
-    border-bottom: 5px solid lightseagreen;
-    height: calc(85% - 5px);
+.coBitPreviewFrame:hover:after{
+    display:block;
+    height: inherit;
+    width: inherit;
+    border-bottom: 3px solid lightseagreen;
+    background: black;
+    opacity: .2;
 }
 
 .iframeHover{
