@@ -118,24 +118,40 @@ a {
     width:550px;
     height:350px;
     margin: 0 auto;
-    background: white;
-    border: 5px solid grey;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    background: dimgrey;
+    border: 3px solid dimgrey;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     overflow: hidden;
     z-index: 781;
+    margin-top: 25px;
 }
 
 .coBitPreviewFrame{
     width: 100%;
-    border:none;
+    border: none;
     height: 85%;
+    margin:0;
 }
+
+.coBitPreviewFrame:hover{
+    border-bottom: 5px solid lightseagreen;
+    height: calc(85% - 5px);
+}
+
+.iframeHover{
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: .2;
+    z-index: 800;
+}
+
 .toPreview{
-    color: grey;
-    z-index:999;
-    font-size:
+    color: #dbdbdb;
+    font-size: 30px;
+    margin-top: -80px;
 }
 
 #headerButtonsWrapper {
@@ -145,7 +161,6 @@ a {
     bottom: 0;
     -webkit-transition: transform .4s ease-in-out;
     -moz-transition: transform .4s ease-in-out;
-    -ms-transition: transform .4s ease-in-out;
     -o-transition: transform .4s ease-in-out;
     transition: transform .4s ease-in-out;
 }
