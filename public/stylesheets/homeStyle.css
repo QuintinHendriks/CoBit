@@ -133,6 +133,7 @@ a {
     border: none;
     height: 85%;
     margin:0;
+    overflow: hidden;
 }
 
 .coBitPreviewFrame:hover{
@@ -149,9 +150,12 @@ a {
 }
 
 .toPreview{
+    position: relative;
     color: #dbdbdb;
-    font-size: 30px;
-    margin-top: -80px;
+    font-size: 20px;
+    top: 0;
+    text-decoration: none;
+    float: left;
 }
 
 #headerButtonsWrapper {
