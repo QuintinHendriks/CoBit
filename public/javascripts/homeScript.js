@@ -29,6 +29,7 @@ $(function () {
             "<div class='coBitPreview'>" +
             "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
             "<a href='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "' class='toPreview'>"+cobit_data[i].title+"</a>" +
+            "<p class='previewOwner'>Made by: "+cobit_data[i].owner+"</p>" +
             "</div>");
     }
 

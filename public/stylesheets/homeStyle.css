@@ -167,6 +167,13 @@ a {
     float: left;
 }
 
+.previewOwner{
+    position: relative;
+    font-size: 15px;
+    color: #dbdbdb;
+    float: left;
+}
+
 #headerButtonsWrapper {
     width: 100vw;
     height: 9vh;
