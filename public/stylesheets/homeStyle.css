@@ -136,26 +136,9 @@ a {
 .coBitPreviewFrame{
     width: 100%;
     border: none;
-    height: calc(85% + 5px);
+    height: 85%;
     margin:0;
     overflow: hidden;
-}
-
-.coBitPreviewFrame:hover:after{
-    display:block;
-    height: inherit;
-    width: inherit;
-    border-bottom: 3px solid lightseagreen;
-    background: black;
-    opacity: .2;
-}
-
-.iframeHover{
-    height: 100%;
-    width: 100%;
-    background: black;
-    opacity: .2;
-    z-index: 800;
 }
 
 .toPreview{
@@ -172,6 +155,17 @@ a {
     font-size: 15px;
     color: #dbdbdb;
     float: left;
+}
+
+.previewOverlay{
+    position: relative;
+    top: calc(-85% - 1px);
+    width: 100%;
+    height: 85%;
+    background: rgba(0,0,0, .4);
+    border-bottom: 5px solid lightseagreen;
+    z-index: 5000;
+    pointer-events: none;
 }
 
 #headerButtonsWrapper {

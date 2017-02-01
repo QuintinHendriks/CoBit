@@ -45,8 +45,10 @@ $(function () {
         $("#homeHeader").animate({scrollLeft: 0}, 800);
     });
 
-    $(".coBitPreview").on('click', function () {
-
+    $(".coBitPreviewFrame").hover(function () {
+        $(this).parent().append("<div class='previewOverlay'></div>")
+    }, function(){
+        $(".previewOverlay").remove();
     });
 
     $(".coBitPreviewframe").hover(function(){
