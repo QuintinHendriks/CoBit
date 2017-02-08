@@ -30,7 +30,7 @@ a {
 #topWrapper {
     background: #313131;
     border-bottom: 3px solid #393B3C;
-    position: fixed;
+    position: fixed !important;
 }
 
 #toHome{

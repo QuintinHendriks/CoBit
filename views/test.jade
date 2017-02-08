@@ -21,5 +21,8 @@ html(lang="en")
             a(href='../cobit/new' id='toNewCoBit')
                 button#newCoBitButton.topButton + New CoBit
         #userFront
-            p You are logged in as #{loginData}
-            p cobit data = #{JSON.stringify(coBitData)}
+            #userInfo
+                img(src='../Images/standard_profile.png' id='profilePic')
+                p#profileName
+        #coBitsContainer.page0 Recent CoBits
+            #coBitsWrapper

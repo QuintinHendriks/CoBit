@@ -16,6 +16,32 @@ $(function () {
     }
 
     else {
-
+        $("#profileName").text(user_data[0].username)
     }
+
+    var n = $("#coBitsContainer").attr("class").split("page")[1];
+
+
+    function changePreviewPage(x){
+        for (var i = x; i < 6 * (x + 1); i++) {
+            $("#coBitsWrapper").append("" +
+                "<div class='coBitPreview'>" +
+                "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
+                "<a href='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "' class='toPreview'>"+cobit_data[i].title+"</a>" +
+                "</div>");
+        }
+        $(".coBitPreviewFrame").each(function(){
+            $("this").contents().find('body').append("<script src='/javascripts/iframeBuffer.js'><\/script>");
+        });
+    }
+
+    changePreviewPage(n);
+
+
+    $(".coBitPreviewFrame").hover(function () {
+        $(this).parent().append("<div class='previewOverlay'></div>")
+    }, function(){
+        $(".previewOverlay").remove();
+    });
+
 });

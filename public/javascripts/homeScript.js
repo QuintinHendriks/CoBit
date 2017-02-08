@@ -24,18 +24,21 @@ $(function () {
     var n = $("#coBitsContainer").attr("class").split("page")[1];
 
 
-    for (var i = n; i < 6 * (n + 1); i++) {
-        $("#coBitsWrapper").append("" +
-            "<div class='coBitPreview'>" +
-            "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
-            "<a href='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "' class='toPreview'>"+cobit_data[i].title+"</a>" +
-            "<p class='previewOwner'>Made by: "+cobit_data[i].owner+"</p>" +
-            "</div>");
+    function changePreviewPage(x){
+        for (var i = x; i < 6 * (x + 1); i++) {
+            $("#coBitsWrapper").append("" +
+                "<div class='coBitPreview'>" +
+                "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
+                "<a href='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "' class='toPreview'>"+cobit_data[i].title+"</a>" +
+                "<p class='previewOwner'>Made by: "+cobit_data[i].owner+"</p>" +
+                "</div>");
+        }
+        $(".coBitPreviewFrame").each(function(){
+            $("this").contents().find('body').append("<script src='/javascripts/iframeBuffer.js'><\/script>");
+        });
     }
 
-    var timeout = setTimeout(function(){
-        $(".coBitPreviewFrame").contentDocument.stop()
-    }, 2000);
+    changePreviewPage(n);
 
     $("#headerButtonCoBits").on("click", function () {
         $("#homeHeader").animate({scrollLeft: $(window).width()}, 800);

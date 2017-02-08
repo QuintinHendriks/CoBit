@@ -21,15 +21,16 @@ body {
     left: 0;
     width: 100vw;
     height: 50px;
-    background-image: url(../backgrounds/escheresque_ste.png);
     top: 0;
+    background: #313131;
+    border-bottom: 3px solid lightgrey;
 }
 
 .topButton {
     background: lightseagreen;
     border-radius: 5px;
     border: none;
-    font-family: 'Quicksand:400', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     width: auto;
     height: 40px;
@@ -54,7 +55,7 @@ body {
 }
 
 #title {
-    font-family: 'Quicksand:700', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 25px;
     float: left;
     color: lightgrey;

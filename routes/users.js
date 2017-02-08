@@ -47,7 +47,11 @@ router.get("/:id", function (req, res) {
         }
         else {
             console.log(docs[0]);
-            collection2.find({"owner": req.params.id}, {_id: 1, owner: 1}, function (e2, docs2) {
+            var result2 = [];
+            docs.forEach(function(document){
+                result2.push({username: document.username, id: document._id});
+            });
+            collection2.find({"owner": req.params.id}, {sort: {"date": -1}}, function (e2, docs2) {
                 console.log(docs2[0]);
                 if (e2) {
                     res.send(e2);
@@ -55,13 +59,13 @@ router.get("/:id", function (req, res) {
                 else {
                     var result = [];
                     docs2.forEach(function(document){
-                        result.push(document._id);
+                        result.push({id: document._id});
                     });
                     if (sess.username) {
-                        res.render('test', {userData: docs[0], loginData: sess.username, coBitData: result});
+                        res.render('test', {userData: result2, loginData: sess.username, coBitData: result});
                     }
                     else {
-                        res.render('test', {userData: docs[0], coBitData: result, loginData: false});
+                        res.render('test', {userData: result2, coBitData: result, loginData: false});
                     }
                 }
             });

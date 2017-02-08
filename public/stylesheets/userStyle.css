@@ -1,8 +1,125 @@
+body{
+    overflow-y: scroll;
+    background: #191919;
+}
+
 #title{
     font-size: 40px !important;
     float: left !important;
 }
 
 #userFront{
-    margin-top: 50px;
+    margin-top: 53px;
+    height: 60vh;
+    background: url(../backgrounds/footer_lodyas.png);
+    width: 100vw;
+    border-bottom: 7px solid lightseagreen;
 }
+
+#profilePic{
+    display: block;
+    margin: 0 auto;
+    height: 20vh;
+    max-height: 200px;
+    position: relative;
+    top: 15vh;
+    background: white;
+    border-radius: 5vh;
+    -webkit-box-shadow: 2px 4px 17px -2px rgba(102,96,95,1);
+    -moz-box-shadow: 2px 4px 17px -2px rgba(102,96,95,1);
+    box-shadow: 2px 4px 17px -2px rgba(102,96,95,1);
+}
+
+#profileName{
+    text-align: center;
+    margin-top: 17vh;
+    font-size: 5vh;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+
+
+
+
+
+
+
+#coBitsContainer {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom:0;
+}
+
+#coBitsWrapper{
+    margin: 0 auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    overflow: scroll;
+    border-top: 6px solid lightseagreen;
+    -webkit-box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    -moz-box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    line-height: 30px;
+}
+
+.coBitPreview{
+    width:550px;
+    height:350px;
+    margin: 0 auto;
+    background: dimgrey;
+    border: 3px solid dimgrey;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.coBitPreviewFrame{
+    width: 100%;
+    border: none;
+    height: 85%;
+    margin:0;
+    overflow: hidden;
+    z-index: 250;
+}
+
+.toPreview{
+    position: relative;
+    color: #dbdbdb;
+    font-size: 20px;
+    top: 0;
+    text-decoration: none;
+    float: left;
+}
+
+.previewOwner{
+    position: relative;
+    font-size: 15px;
+    color: #dbdbdb;
+    float: left;
+}
+
+.previewOverlay{
+    position: relative;
+    top: calc(-85% - 1px);
+    width: 100%;
+    height: 85%;
+    background: rgba(0,0,0, .4);
+    border-bottom: 5px solid lightseagreen;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+
+
+
+
+
