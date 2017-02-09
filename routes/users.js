@@ -59,7 +59,7 @@ router.get("/:id", function (req, res) {
                 else {
                     var result = [];
                     docs2.forEach(function(document){
-                        result.push({id: document._id});
+                        result.push({id: document._id, title: document.title, owner: document.owner});
                     });
                     if (sess.username) {
                         res.render('test', {userData: result2, loginData: sess.username, coBitData: result});

@@ -25,6 +25,7 @@ $(function () {
         for (var i = x; i < 6 * (x + 1); i++) {
             console.log(i);
             console.log(cobit_data[i]);
+            if(!cobit_data[i]){break;}
             $("#coBitsWrapper").append("" +
                 "<div class='coBitPreview'>" +
                 "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
