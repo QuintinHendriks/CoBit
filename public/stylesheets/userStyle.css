@@ -52,7 +52,7 @@ body{
     color: white;
     font-size: 50px;
     text-align: center;
-    padding-bottom:0;
+    padding-bottom: 5px;
 }
 
 #coBitsWrapper{
@@ -88,7 +88,6 @@ body{
     height: 85%;
     margin:0;
     overflow: hidden;
-    z-index: 250;
 }
 
 .toPreview{

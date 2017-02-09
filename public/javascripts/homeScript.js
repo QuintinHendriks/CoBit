@@ -49,12 +49,9 @@ $(function () {
     });
 
     $(".coBitPreviewFrame").hover(function () {
-        $(this).parent().append("<div class='previewOverlay'></div>")
+        console.log("dit werkt");
+        $(this).parent().append("<div class='previewOverlay'><\/div>")
     }, function(){
         $(".previewOverlay").remove();
-    });
-
-    $(".coBitPreviewframe").hover(function(){
-        $(this).append("<div class='iframeHover'></div>");
     });
 });

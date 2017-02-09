@@ -21,13 +21,15 @@ $(function () {
 
     var n = $("#coBitsContainer").attr("class").split("page")[1];
 
-
     function changePreviewPage(x){
         for (var i = x; i < 6 * (x + 1); i++) {
+            console.log(i);
+            console.log(cobit_data[i]);
             $("#coBitsWrapper").append("" +
                 "<div class='coBitPreview'>" +
                 "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
                 "<a href='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "' class='toPreview'>"+cobit_data[i].title+"</a>" +
+                "<p class='previewOwner'>Made by: "+cobit_data[i].owner+"</p>" +
                 "</div>");
         }
         $(".coBitPreviewFrame").each(function(){
@@ -39,9 +41,12 @@ $(function () {
 
 
     $(".coBitPreviewFrame").hover(function () {
-        $(this).parent().append("<div class='previewOverlay'></div>")
+        $(this).parent().append("<div class='previewOverlay'><\/div>")
     }, function(){
         $(".previewOverlay").remove();
     });
 
+    $("#title").on('hover', function(){
+        console.log("misschien werkt dit");
+    });
 });

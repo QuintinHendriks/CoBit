@@ -114,9 +114,9 @@ a {
     height: 80vh;
     overflow: scroll;
     border-top: 6px solid lightseagreen;
-    -webkit-box-shadow: inset 0px -6px 0px 0px lightseagreen;
-    -moz-box-shadow: inset 0px -6px 0px 0px lightseagreen;
-    box-shadow: inset 0px -6px 0px 0px lightseagreen;
+    -webkit-box-shadow: inset 0 -6px 0 0 lightseagreen;
+    -moz-box-shadow: inset 0 -6px 0 0 lightseagreen;
+    box-shadow: inset 0 -6px 0 0 lightseagreen;
     line-height: 30px;
 }
 
