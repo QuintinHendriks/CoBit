@@ -191,7 +191,7 @@ $(function () {
         ip = response.ip;
     }, "jsonp");
 
-    $('#save').click(function () {
+    function saveCoBit() {
         var libsVal = [];
         $(".libraryInput").each(function () {
             if ($(this).val() !== "") {
@@ -211,22 +211,63 @@ $(function () {
         }
         var dateVal = Date.now();
 
-        if (local_data._id !== undefined) {
-            var updateVal = local_data._id;
-        }
-        else {
-            var updateVal = false;
-        }
-
         $("#jsValue").text(jsVal);
         $("#cssValue").text(cssVal);
         $("#htmlValue").text(htmlVal);
         $("#headValue").text(headVal);
         $("#libsValue").text(libsVal);
         $("#titleValue").text(titleVal);
-        $("#update").text(updateVal);
         $("#user").text(userVal);
         $("#dateValue").text(dateVal);
+        document.getElementById("formAddCoBit").submit();
+    }
+
+    function updateCoBit() {
+        var libsVal = [];
+        $(".libraryInput").each(function () {
+            if ($(this).val() !== "") {
+                libsVal.push($(this).val());
+            }
+        });
+        console.log(libsVal);
+        var jsVal = jsEditor.getValue();
+        var cssVal = cssEditor.getValue();
+        var htmlVal = htmlEditor.getValue();
+        var headVal = $("#headInput").val();
+        var titleVal = $("#title").text();
+        libsVal = libsVal = [] ? "" : libsVal;
+        console.log(libsVal);
+        var updateData = {
+            js: jsVal,
+            css: cssVal,
+            html: htmlVal,
+            head: headVal,
+            title: titleVal,
+            libraries: libsVal
+        };
+        console.log(updateData);
+        $.ajax({
+            type: "PUT",
+            data: updateData,
+            url: "../cobit/updatecobit/" + local_data._id,
+            dataType: "JSON"
+        }).done(function (response) {
+            if (response.msg === '') {
+                alert('Success');
+            }
+            else {
+                alert('Error: ' + response.msg);
+            }
+        });
+    }
+
+    $("#save").click(function () {
+        if (local_data) {
+            updateCoBit();
+        }
+        else {
+            saveCoBit();
+        }
     });
 
     function showCoBit() {
@@ -235,10 +276,17 @@ $(function () {
 
             $("#libraries").empty();
 
-            var libsVal = local_data.libraries.split(",");
-
-            for (var i = 0; i < libsVal.length; i++) {
-                $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
+            if (typeof local_data.libraries === "string") {
+                libsVal = local_data.libraries.split(',');
+            }
+            else {
+                var libsVal = local_data.libraries;
+            }
+            console.log(libsVal);
+            if (libsVal !== false) {
+                for (var i = 0; i < libsVal.length; i++) {
+                    $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
+                }
             }
 
             jsEditor.setValue(local_data.js);
@@ -266,7 +314,7 @@ $(function () {
 
             }, "jsonp");
             update();
-            setTimeout(function(){
+            setTimeout(function () {
                 window.stop();
             }, 300);
         }

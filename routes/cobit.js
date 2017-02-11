@@ -17,8 +17,8 @@ router.get("/new", function (req, res) {
         res.render('index.jade', {coBitData: false, loginData: sess.username});
         res.send("done");
     }
-    else{
-        res.render('index.jade', {coBitData: false, loginData: false} );
+    else {
+        res.render('index.jade', {coBitData: false, loginData: false});
         res.send("done");
     }
 });
@@ -34,11 +34,11 @@ router.get("/:id", function (req, res) {
             res.render("404");
         }
         else if (e === null) {
-            if(sess.username){
+            if (sess.username) {
                 res.render('index.jade', {coBitData: docs[0], loginData: sess.username});
                 res.send("done");
             }
-           else{
+            else {
                 res.render('index.jade', {coBitData: docs[0], loginData: false});
                 res.send("done");
             }
@@ -57,18 +57,18 @@ router.get("/:id/debug", function (req, res) {
             res.render("404");
         }
         else if (e === null) {
-            if(sess.username){
+            if (sess.username) {
                 res.render('debug.jade', {coBitData: docs[0], loginData: sess.username});
                 res.send("done");
             }
-            else{
+            else {
                 res.render('debug.jade', {coBitData: docs[0], loginData: false});
                 res.send("done");
             }
         }
     });
 });
-
+/*
 router.post('/addCoBit', function (req, res) {
 
     var db = req.db;
@@ -134,6 +134,61 @@ router.post('/addCoBit', function (req, res) {
             }
         });
     }
+});
+*/
+router.put('/updatecobit/:id', function (req, res) {
+    var db = req.db;
+    var collection = db.get('coBits');
+    console.log(req.body);
+    collection.update({"_id": req.params.id}, {
+        $set: req.body
+    }, function (err, doc) {
+        if(err){
+            res.send(err);
+        }
+        else{
+            console.log("Cobit: "+req.params.id+" was updated with data:");
+            console.log(doc);
+        }
+    });
+});
+
+router.post('/addcobit', function(req, res){
+    var db = req.db;
+    var collection = db.get('coBits');
+    console.log(req.body);
+
+    var jsVal = req.body.jsValue;
+    var cssVal = req.body.cssValue;
+    var htmlVal = req.body.htmlValue;
+    var headVal = req.body.settingsValue;
+    var titleVal = req.body.titleValue;
+    var libsVal = req.body.libsValue;
+    var userVal = req.body.user;
+    var dateVal = req.body.dateValue;
+
+    collection.insert({
+        "js": jsVal,
+        "css": cssVal,
+        "html": htmlVal,
+        "head": headVal,
+        "title": titleVal,
+        "libraries": libsVal,
+        "owner": userVal,
+        "date": dateVal
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send(err);
+        }
+        else {
+            console.log(doc);
+            console.log(err);
+            // And forward to success page
+            res.redirect("../cobit/" + doc._id);
+            res.send("done");
+        }
+    });
 });
 
 module.exports = router;

@@ -31,11 +31,11 @@ html(lang='en')
             i#editIco.fa.fa-pencil
             button#run.topButton Run
                 i.fa.fa-play
-            button#save(type="submit" form="formAddCoBit").topButton Save
+            button#save.topButton Save2
             button#settingsToggle.topButton Settings
             a(href='../login' id='toLogin')
                 button#loginButtonUser.topButton Login
-            form#formAddCoBit(name="addCoBit", method="post", action="/cobit/addCoBit")
+            form#formAddCoBit(name="addCoBit", method="post", action="/cobit/addcobit")
             textarea#jsValue.valuePlaceholder.hidden(name='jsValue' form="formAddCoBit")
             textarea#cssValue.valuePlaceholder.hidden(name='cssValue' form="formAddCoBit")
             textarea#htmlValue.valuePlaceholder.hidden(name='htmlValue' form="formAddCoBit")
