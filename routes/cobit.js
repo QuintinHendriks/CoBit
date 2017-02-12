@@ -197,7 +197,7 @@ router.put("/:id/like", function (req, res) {
     var collection = db.get('coBits');
 
     collection.find({'_id': req.params.id}, {}, function(err, docs){
-        if(docs.likes.indexOf(req.body.liker) === -1){
+        if(docs.likes.indexOf(req.body.liker) === -1 || docs.likes === undefined){
             console.log(req.body.liker);
             collection.update({"_id": req.params.id}, {
                 $push: {"likes": req.body.liker}
