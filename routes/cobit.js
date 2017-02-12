@@ -192,7 +192,7 @@ router.post('/addcobit', function (req, res) {
     });
 });
 
-router.put("/:id/like", function (req, res) {
+router.post("/:id/like", function (req, res) {
     var db = req.db;
     var collection = db.get('coBits');
     var liker = req.body.liker;
