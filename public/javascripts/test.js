@@ -321,7 +321,7 @@ $(function () {
         if(!$(this).hasClass("liked")) {
             $.ajax({
                 type: "PUT",
-                url: "localhost:5000/cobit/" + local_data._id + "/like",
+                url: "https://co-bit.herokuapp.com/cobit/" + local_data._id + "/like",
                 data: {
                     liker: login_data
                 },
