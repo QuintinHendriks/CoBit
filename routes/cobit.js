@@ -200,7 +200,7 @@ router.put("/:id/like", function (req, res) {
     collection.find({'_id': req.params.id}, {}, function(err, docs){
         console.log(docs);
         if(docs[0].likes.indexOf(req.body.liker) === -1 || docs[0].likes === undefined){
-            console.log(liker);
+            console.log("liker: " + liker);
             collection.update({"_id": req.params.id}, {
                 $push: {"likes": liker}
             });
