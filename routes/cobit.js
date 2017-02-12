@@ -195,9 +195,14 @@ router.post('/addcobit', function (req, res) {
 router.put("/:id/like", function (req, res) {
     var db = req.db;
     var collection = db.get('coBits');
-    console.log(req.body.liker);
-    collection.update({"_id": req.params.id}, {
-        $push: {"likes": req.body.liker}
+
+    collection.find({'_id': req.params.id}, {}, function(err, docs){
+        if(docs.likes.indexOf(req.body.liker) === -1){
+            console.log(req.body.liker);
+            collection.update({"_id": req.params.id}, {
+                $push: {"likes": req.body.liker}
+            });
+        }
     });
 });
 

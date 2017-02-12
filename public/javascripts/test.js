@@ -123,8 +123,6 @@ $(function () {
         $("#toSignUp").remove();
     }
 
-    console.log(local_data);
-
     $("#addLibrary").on("click", function () {
         $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
     });
@@ -135,7 +133,6 @@ $(function () {
     });
 
     function update() {
-        console.log("local data: " + local_data);
         var libs = [];
         $(".libraryInput").each(function () {
             if ($(this).val() !== "") {
@@ -229,14 +226,12 @@ $(function () {
                 libsVal.push($(this).val());
             }
         });
-        console.log(libsVal);
         var jsVal = jsEditor.getValue();
         var cssVal = cssEditor.getValue();
         var htmlVal = htmlEditor.getValue();
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
         libsVal = libsVal = [] ? "" : libsVal;
-        console.log(libsVal);
         var updateData = {
             js: jsVal,
             css: cssVal,
@@ -245,7 +240,6 @@ $(function () {
             title: titleVal,
             libraries: libsVal
         };
-        console.log(updateData);
         $.ajax({
             type: "PUT",
             data: updateData,
@@ -272,7 +266,6 @@ $(function () {
 
     function showCoBit() {
         if (local_data !== false) {
-            console.log(local_data);
 
             $("#libraries").empty();
 
@@ -282,7 +275,6 @@ $(function () {
             else {
                 var libsVal = local_data.libraries;
             }
-            console.log(libsVal);
             if (libsVal !== false) {
                 for (var i = 0; i < libsVal.length; i++) {
                     $("#libraries").append('<input type="text" class="libraryInput" placeholder="add js libraries" value="' + libsVal[i] + '"><button class="deleteLibrary"><i class="fa fa-minus"></i></button>');
@@ -305,7 +297,6 @@ $(function () {
 
             $.get("https://ipinfo.io", function (response) {
                 ip = response.ip;
-                console.log(ip);
                 if (local_data.owner !== login_data) {
                     if (local_data.owner !== "anon: " + ip) {
                         $("#save").remove();
@@ -319,6 +310,7 @@ $(function () {
 
     $("#like").click(function(){
         if(!$(this).hasClass("liked")) {
+            $("#like").addClass("liked");
             $.ajax({
                 type: "PUT",
                 url: "https://co-bit.herokuapp.com/cobit/" + local_data._id + "/like",
@@ -328,7 +320,6 @@ $(function () {
                 dataType: "JSON"
             }).done(function (response) {
                 console.log(response);
-                $("#like").addClass("liked");
             });
         }
     });

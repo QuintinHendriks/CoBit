@@ -54,6 +54,10 @@ body {
     position: absolute;
 }
 
+.liked{
+    color: deeppink;
+}
+
 #title {
     font-family: 'Quicksand', sans-serif;
     font-size: 25px;

@@ -2,7 +2,7 @@
  * Created by Quintin on 25-1-2017.
  */
 $(function () {
-    var backgrounds = ["5887e8566b92f01288f6db20", "58874e0785fb150011c8aba6", "5887f09da80f5d0011a8741a", "5887f1a9c27d270011ec1ed0", "588b26c07b64520011f55c6f", "588d0aa506f2db0011b8844f", "588fc45465a63c001184ae5c"];
+    var backgrounds = ["5887e8566b92f01288f6db20", "58874e0785fb150011c8aba6", "5887f09da80f5d0011a8741a", "5887f1a9c27d270011ec1ed0", "588b26c07b64520011f55c6f", "588d0aa506f2db0011b8844f", "588fc45465a63c001184ae5c", "58a0e3798f1ffb00116d5776"];
     var random = Math.floor(Math.random() * backgrounds.length);
 
     function newBackground() {

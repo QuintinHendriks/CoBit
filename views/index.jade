@@ -29,7 +29,7 @@ html(lang='en')
             #title Untitled
             #owner
             i#editIco.fa.fa-pencil
-            - if(loginData && (loginData !== coBitData.owner)) {
+            - if(coBitData && loginData && (loginData !== coBitData.owner)) {
             button#like.topButton
                 i.fa.fa-heart
             - }
