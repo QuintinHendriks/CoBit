@@ -314,11 +314,24 @@ $(function () {
 
             }, "jsonp");
             update();
-            setTimeout(function () {
-                window.stop();
-            }, 300);
         }
     }
+
+    $("#like").click(function(){
+        if(!$(this).hasClass("liked")) {
+            $.ajax({
+                type: "PUT",
+                url: "localhost:5000/cobit/" + local_data._id + "/like",
+                data: {
+                    liker: login_data
+                },
+                dataType: "JSON"
+            }).done(function (response) {
+                console.log(response);
+                $("#like").addClass("liked");
+            });
+        }
+    });
 
     if (local_data !== false) {
         showCoBit();

@@ -29,9 +29,13 @@ html(lang='en')
             #title Untitled
             #owner
             i#editIco.fa.fa-pencil
+            - if(loginData && (loginData !== coBitData.owner)) {
+            button#like.topButton
+                i.fa.fa-heart
+            - }
             button#run.topButton Run
                 i.fa.fa-play
-            button#save.topButton Save2
+            button#save.topButton Save
             button#settingsToggle.topButton Settings
             a(href='../login' id='toLogin')
                 button#loginButtonUser.topButton Login
