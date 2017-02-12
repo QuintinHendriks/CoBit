@@ -199,6 +199,8 @@ router.post("/:id/like", function (req, res) {
 
     collection.find({'_id': req.params.id}, {}, function(err, docs){
         console.log(docs[0]);
+        console.log(docs[0].likes);
+        console.log(liker);
         if(docs[0].likes.indexOf(req.body.liker) === -1 || docs[0].likes === undefined){
             console.log("liker: " + liker);
             collection.update({"_id": req.params.id}, {
