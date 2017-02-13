@@ -144,17 +144,34 @@ a {
 .toPreview{
     position: relative;
     color: #dbdbdb;
-    font-size: 20px;
+    font-size: 25px;
     top: 0;
     text-decoration: none;
     float: left;
+    margin-left: 5px;
 }
 
 .previewOwner{
-    position: relative;
-    font-size: 15px;
+    position: absolute;
+    font-size: 18px;
     color: #dbdbdb;
     float: left;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.previewLikes{
+    float: right;
+    font-size: 15px;
+    color: #dbdbdb;
+}
+
+.previewLikeIcon {
+    position: relative;
+    top: 23px;
+    left: -3px;
+    float: right;
+    color: #dbdbdb;
 }
 
 .previewOverlay{
