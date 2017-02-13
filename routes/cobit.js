@@ -207,6 +207,7 @@ router.put("/:id/like", function (req, res) {
                 }
                 else{
                     console.log(docs);
+                    res.send("succes");
                 }
             });
         }
@@ -219,10 +220,13 @@ router.put("/:id/like", function (req, res) {
                 }
                 else{
                     console.log(docs);
+                    res.send("succes");
                 }
             });
         }
     });
 });
+
+router.get
 
 module.exports = router;
