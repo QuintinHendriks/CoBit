@@ -322,6 +322,19 @@ $(function () {
                 console.log(response);
             });
         }
+        else{
+            $("#like").removeClass("liked");
+            $.ajax({
+                type: "PUT",
+                url: "https://co-bit.herokuapp.com/cobit/" + local_data._id + "/like",
+                data: {
+                    liker: login_data
+                },
+                dataType: "JSON"
+            }).done(function (response) {
+                console.log(response);
+            });
+        }
     });
 
     if (local_data !== false) {

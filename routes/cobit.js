@@ -210,6 +210,18 @@ router.put("/:id/like", function (req, res) {
                 }
             });
         }
+        else{
+            collection.update({"_id": req.params.id}, {
+                $pull: {"likes": liker} 
+            }, function(err, docs){
+                if(err){
+                    res.send(err);
+                }
+                else{
+                    console.log(docs);
+                }
+            });
+        }
     });
 });
 
