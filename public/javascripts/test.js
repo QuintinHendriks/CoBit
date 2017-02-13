@@ -307,6 +307,10 @@ $(function () {
             update();
         }
     }
+    
+    function getLikes(){
+        
+    }
 
     $("#like").click(function(){
         if(!$(this).hasClass("liked")) {
@@ -317,7 +321,10 @@ $(function () {
                 data: {
                     liker: login_data
                 },
-                dataType: "JSON"
+                dataType: "JSON",
+                success: function(data){
+                    console.log(data);
+                }
             }).done(function (response) {
                 console.log(response);
             });
@@ -330,7 +337,10 @@ $(function () {
                 data: {
                     liker: login_data
                 },
-                dataType: "JSON"
+                dataType: "JSON",
+                success: function(data){
+                    console.log(data);
+                }
             }).done(function (response) {
                 console.log(response);
             });
