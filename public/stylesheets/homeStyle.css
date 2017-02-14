@@ -148,16 +148,17 @@ a {
     top: 0;
     text-decoration: none;
     float: left;
+    width: 0;
+    text-align: left;
     margin-left: 5px;
 }
 
 .previewOwner{
-    position: absolute;
     font-size: 18px;
     color: #dbdbdb;
+    text-align: left;
     float: left;
     margin-top: 25px;
-    margin-left: 5px;
 }
 
 .previewLikes{
