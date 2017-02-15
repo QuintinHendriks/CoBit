@@ -39,6 +39,21 @@ body {
     margin-top: 5px;
     padding-left: 12px;
     padding-right: 12px;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -ms-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+}
+
+.topButton:hover{
+    background: #28ded4;
+    cursor: pointer;
+}
+
+.topButton:active{
+    height: 37px;
+    margin-top: 8px;
 }
 
 .settingsButton {

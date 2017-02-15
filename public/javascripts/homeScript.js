@@ -40,6 +40,14 @@ $(function () {
 
     changePreviewPage(n);
 
+    $(".selected").hover(function(){
+        $("#coBitsList").css('background', 'rgba(32,178,170,0.6)');
+        $(".listItem:not(.selected)").css('opacity', '1');
+    }, function(){
+        $("#coBitsList").css('background', 'transparent');
+    });
+
+
     $("#headerButtonCoBits").on("click", function () {
         $("#homeHeader").animate({scrollLeft: $(window).width()}, 800);
     });
@@ -50,7 +58,7 @@ $(function () {
 
     $(".coBitPreviewFrame").hover(function () {
         console.log("dit werkt");
-        $(this).parent().append("<div class='previewOverlay'></div>")
+        $(this).parent().append("<div class='previewOverlay'></div>");
         $(".previewOverlay").addClass("animated fadeIn");
     }, function(){
         $(".previewOverlay").remove();

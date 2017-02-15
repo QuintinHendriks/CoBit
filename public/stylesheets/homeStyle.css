@@ -102,8 +102,20 @@ a {
     font-family: 'Quicksand', sans-serif;
     color: white;
     font-size: 50px;
-    text-align: center;
     padding-bottom:0;
+    top: -55px;
+}
+
+#coBitsList{
+    position: relative;
+    left: 5vw;
+    bottom: -55px;
+    z-index: 2000;
+    display: inline-block;
+}
+
+#popularCoBits{
+    opacity: 0;
 }
 
 #coBitsWrapper{
