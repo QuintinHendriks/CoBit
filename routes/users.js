@@ -35,6 +35,8 @@ var sess;
 router.get("/:id", function (req, res) {
     sess = req.session;
 
+    sess.lastpage = "https://co-bit.herokuapp.com/users/"+ req.params.id;
+
     var db = req.db;
     var collection = db.get('users');
     var collection2 = db.get("coBits");

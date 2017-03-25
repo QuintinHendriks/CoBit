@@ -11,6 +11,7 @@ router.get('/test', function(req, res) {
 var sess;
 router.get("/", function(req, res) {
     sess = req.session;
+    sess.lastpage = "https://co-bit.herokuapp.com";
     var db = req.db;
     var collection = db.get("coBits");
 

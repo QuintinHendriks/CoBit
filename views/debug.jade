@@ -8,7 +8,10 @@ html(lang="en")
         !{coBitData.head}
     body
         !{coBitData.html}
-    each item in coBitData.libraries
-        script(src=item)
+    if typeof coBitData.libraries !== "string"
+        each item in coBitData.libraries
+            script(src=item)
+    else
+        script(src=coBitData.libraries)
     script
         !{coBitData.js}

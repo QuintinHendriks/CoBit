@@ -13,6 +13,7 @@ router.get('/', function (req, res) {
 
 router.get("/new", function (req, res) {
     sess = req.session;
+    sess.lastpage = "https://co-bit.herokuapp.com/new";
     if (sess.username) {
         res.render('index.jade', {coBitData: false, loginData: sess.username});
         res.send("done");
@@ -25,6 +26,7 @@ router.get("/new", function (req, res) {
 
 router.get("/:id", function (req, res) {
     sess = req.session;
+    sess.lastpage = "https://co-bit.herokuapp.com/cobit/"+ req.params.id;
     var id = req.params.id;
     var db = req.db;
     var collection = db.get("coBits");
