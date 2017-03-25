@@ -46,6 +46,8 @@ $(function () {
         }
     });
 
+    console.log(ip_data);
+
     $("#htmlEditor").find(".CodeMirror").css("position", "absolute").css("top", ($("#htmlHandle").offset().top - 20) + 'px');
     $("#cssEditor").find(".CodeMirror").css("position", "absolute").css("top", ($("#cssHandle").offset().top - 20) + 'px');
     $("#jsEditor").find(".CodeMirror").css("position", "absolute");

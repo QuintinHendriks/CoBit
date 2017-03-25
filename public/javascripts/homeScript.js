@@ -21,9 +21,11 @@ $(function () {
 
     console.log(cobit_data);
 
-    function changePreviewPage(){
-        for (var i = 0; i < 6; i++) {
+    function changePreviewPage(n){
+        $("#coBitsWrapper").empty();
+        for (var i = 6*(n-1); i < 6*n; i++) {
             var likes  = cobit_data[i].likes === undefined ? 0 : cobit_data[i].likes.length;
+            console.log(cobit_data[i].id);
             $("#coBitsWrapper").append("" +
                 "<div class='coBitPreview'>" +
                 "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
@@ -35,18 +37,27 @@ $(function () {
         }
     }
 
-    changePreviewPage();
+    changePreviewPage(1);
 
 
-    function compare(a,b) {
-        if (a.likes.length < b.likes.length)
+    function compare_likes(a,b) {
+        if (a.likes < b.likes)
             return 1;
-        if (a.likes.length > b.likes.length)
+        if (a.likes > b.likes)
             return -1;
         return 0;
     }
 
-    var date_sort = cobit_data;
+    function compare_date(a,b){
+        if (a.date < b.date)
+            return 1;
+        if (a.date > b.date)
+            return -1;
+        return 0;
+    }
+
+    //var date_sort = cobit_data.sort(compare_date);
+    //var likes_sort = cobit_data.sort(compare_likes);
 
     console.log(cobit_data);
 
@@ -60,9 +71,8 @@ $(function () {
 
         if(x === 1){
             $("#coBitsWrapper").empty();
-            var likes_sort = cobit_data.sort(compare);
             for (var i = 0; i < 6; i++) {
-                var likes  = likes_sort[i].likes === undefined ? 0 : likes_sort[i].likes.length;
+                //var likes  = likes_sort[i].likes === undefined ? 0 : likes_sort[i].likes.length;
                 $("#coBitsWrapper").append("" +
                     "<div class='coBitPreview'>" +
                     "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + likes_sort[i].id + "/debug'></iframe>" +
@@ -77,7 +87,7 @@ $(function () {
         if(x === 2){
             $("#coBitsWrapper").empty();
             for (var i = 0; i < 6; i++) {
-                var likes  = date_sort[i].likes === undefined ? 0 : date_sort[i].likes.length;
+                //var likes  = date_sort[i].likes === undefined ? 0 : date_sort[i].likes.length;
                 $("#coBitsWrapper").append("" +
                     "<div class='coBitPreview'>" +
                     "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + date_sort[i].id + "/debug'></iframe>" +
