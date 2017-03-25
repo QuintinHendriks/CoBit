@@ -37,11 +37,11 @@ router.get("/:id", function (req, res) {
         }
         else if (e === null) {
             if (sess.username) {
-                res.render('index.jade', {coBitData: docs[0], loginData: sess.username, ipData: req.socket.remoteAddress});
+                res.render('index.jade', {coBitData: docs[0], loginData: sess.username, ipData: req.headers['x-forwarded-for']});
                 res.send("done");
             }
             else {
-                res.render('index.jade', {coBitData: docs[0], loginData: false, ipData: req.socket.remoteAddress});
+                res.render('index.jade', {coBitData: docs[0], loginData: false, ipData: req.headers['x-forwarded-for']});
                 res.send("done");
             }
         }
