@@ -58,6 +58,7 @@ router.get("/:id/debug", function (req, res) {
         }
         else if (e === null) {
             if (sess.username) {
+                console.log(docs[0]);
                 res.render('debug.jade', {coBitData: docs[0], loginData: sess.username});
                 res.send("done");
             }

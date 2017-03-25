@@ -8,7 +8,7 @@ html(lang="en")
         !{coBitData.head}
     body
         !{coBitData.html}
-    each item in coBitData.libraries.split(",")
+    each item in coBitData.libraries
         script(src=item)
     script
         !{coBitData.js}

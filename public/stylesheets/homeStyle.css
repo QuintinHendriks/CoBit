@@ -110,12 +110,26 @@ a {
     position: relative;
     left: 5vw;
     bottom: -55px;
-    z-index: 2000;
+    z-index: 1500;
     display: inline-block;
 }
 
-#popularCoBits{
+.listItem{
+    position: relative;
+    top: 0;
+}
+
+.item2{
+    top: -63px;
+ }
+
+.unselected{
     opacity: 0;
+}
+
+.selected{
+    z-index: 5000;
+    cursor: pointer;
 }
 
 #coBitsWrapper{

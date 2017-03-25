@@ -231,7 +231,10 @@ $(function () {
         var htmlVal = htmlEditor.getValue();
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
-        libsVal = libsVal = [] ? "" : libsVal;
+        if(libsVal === []){
+            libsVal = "";
+        }
+        console.log(libsVal);
         var updateData = {
             js: jsVal,
             css: cssVal,
