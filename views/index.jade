@@ -43,7 +43,9 @@ html(lang='en')
             - }
             button#run.topButton Run
                 i.fa.fa-play
+            - if(coBitData && ((loginData !== false && loginData === coBitData.owner) || (coBitData.owner === "anon: " + ipData))) {
             button#save.topButton Save
+            - }
             button#settingsToggle.topButton Settings
             a(href='../login' id='toLogin')
                 button#loginButtonUser.topButton Login
