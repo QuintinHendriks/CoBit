@@ -197,7 +197,7 @@ $(function () {
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
         if (login_data === false) {
-            var userVal = "anon: " + ip_data;
+            var userVal = "anon: " + ip_data[0];
         }
         else {
             var userVal = login_data;

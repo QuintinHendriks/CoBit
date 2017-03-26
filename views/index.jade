@@ -43,7 +43,7 @@ html(lang='en')
             - }
             button#run.topButton Run
                 i.fa.fa-play
-            - if(coBitData && ((loginData !== false && loginData === coBitData.owner) || (coBitData.owner === "anon: " + ipData))) {
+            - if((coBitData && ((loginData !== false && loginData === coBitData.owner) || (coBitData.owner === "anon: " + ipData))) || coBitData === false) {
             button#save.topButton Save
             - }
             button#settingsToggle.topButton Settings

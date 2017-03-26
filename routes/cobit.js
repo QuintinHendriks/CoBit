@@ -15,11 +15,11 @@ router.get("/new", function (req, res) {
     sess = req.session;
     sess.lastpage = "https://co-bit.herokuapp.com/new";
     if (sess.username) {
-        res.render('index.jade', {coBitData: false, loginData: sess.username, ipData: req.headers['x-forwarded-for']});
+        res.render('index.jade', {coBitData: false, loginData: sess.username, ipData: [req.headers['x-forwarded-for'], req.connection.remoteAdress]});
         res.send("done");
     }
     else {
-        res.render('index.jade', {coBitData: false, loginData: false, ipData: req.headers['x-forwarded-for']});
+        res.render('index.jade', {coBitData: false, loginData: false, ipData: [req.headers['x-forwarded-for'], req.connection.remoteAdress]});
         res.send("done");
     }
 });
