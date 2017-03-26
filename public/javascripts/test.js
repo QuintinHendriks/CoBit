@@ -184,12 +184,6 @@ $(function () {
         $("#settings").toggleClass("hidden");
     });
 
-    var ip;
-
-    $.get("https://ipinfo.io", function (response) {
-        ip = response.ip;
-    }, "jsonp");
-
     function saveCoBit() {
         var libsVal = [];
         $(".libraryInput").each(function () {
@@ -203,7 +197,7 @@ $(function () {
         var headVal = $("#headInput").val();
         var titleVal = $("#title").text();
         if (login_data === false) {
-            var userVal = "anon: " + ip;
+            var userVal = "anon: " + ip_data;
         }
         else {
             var userVal = login_data;
@@ -300,15 +294,6 @@ $(function () {
                 $("#owner").text("A CoBit by: " + local_data.owner);
             }
 
-            $.get("https://ipinfo.io", function (response) {
-                ip = response.ip;
-                if (local_data.owner !== login_data) {
-                    if (local_data.owner !== "anon: " + ip) {
-                        $("#save").remove();
-                    }
-                }
-
-            }, "jsonp");
             update();
         }
     }
