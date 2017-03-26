@@ -37,11 +37,11 @@ router.get("/:id", function (req, res) {
         }
         else if (e === null) {
             if (sess.username) {
-                res.render('index.jade', {coBitData: docs[0], loginData: sess.username, ipData: req.headers['x-forwarded-for']});
+                res.render('index.jade', {coBitData: docs[0], loginData: sess.username, ipData: [req.headers['x-forwarded-for'], req.connection.remoteAdress]});
                 res.send("done");
             }
             else {
-                res.render('index.jade', {coBitData: docs[0], loginData: false, ipData: req.headers['x-forwarded-for']});
+                res.render('index.jade', {coBitData: docs[0], loginData: false, ipData: [req.headers['x-forwarded-for'], req.connection.remoteAdress]});
                 res.send("done");
             }
         }
@@ -71,74 +71,50 @@ router.get("/:id/debug", function (req, res) {
         }
     });
 });
-/*
- router.post('/addCoBit', function (req, res) {
 
- var db = req.db;
+router.get("/:id/discuss", function(req, res){
+    var sess = req.session;
+    var id = req.params.id;
+    var db = req.db;
+    var collection = db.get("comments");
+    var collection2 = db.get("coBits");
+    collection2.find({"_id": id}, {}, function(e, docs){
+        if(docs.length === 0){
+            res.render("404");
+        }
+        else if(e === 0 || e === null) {
+            console.log("0");
+            collection.find({"bitId": id}, {}, function(e2, docs2){
+                if(docs2.length === 0){
+                    console.log("1");
+                    if(sess.username){
+                        res.render("discussion.jade", {coBitData: docs[0], loginData: sess.username, commentData: false});
+                        res.send("done");
+                    }
+                    else{
+                        res.render("discussion.jade", {coBitData: docs[0], loginData: false, commentData: false});
+                        res.send("done");
+                    }
+                }
+                else if(e2 === 0 || e2 === null){
+                    console.log("2");
+                    if(sess.username){
+                        res.render("discussion.jade", {coBitData: docs[0], loginData: sess.username, commentData: docs2});
+                        res.send("done");
+                    }
+                    else{
+                        res.render("discussion.jade", {coBitData: docs[0], loginData: false, commentData: docs2});
+                        res.send("done");
+                    }
+                }
+            });
+        }
+        else{
+            console.log(e);
+        }
+    });
+});
 
- var jsVal = req.body.jsValue;
- var cssVal = req.body.cssValue;
- var htmlVal = req.body.htmlValue;
- var headVal = req.body.settingsValue;
- var titleVal = req.body.titleValue;
- var libsVal = req.body.libsValue;
- var updateVal = req.body.updateValue;
- var userVal = req.body.user;
- var dateVal = req.body.dateValue;
-
- var collection = db.get('coBits');
- console.log("update: " + updateVal);
- console.log(updateVal);
-
- if (updateVal === 'false') {
- collection.insert({
- "js": jsVal,
- "css": cssVal,
- "html": htmlVal,
- "head": headVal,
- "title": titleVal,
- "libraries": libsVal,
- "owner": userVal,
- "date": dateVal
- }, function (err, doc) {
- if (err) {
- // If it failed, return error
- res.send(err);
- }
- else {
- console.log(doc);
- console.log(err);
- // And forward to success page
- res.redirect("../cobit/" + doc._id);
- res.send("done");
- }
- });
- }
- else if (updateVal !== 'false') {
- collection.update({"_id": updateVal}, {
- $set: {
- "js": jsVal,
- "css": cssVal,
- "html": htmlVal,
- "head": headVal,
- "title": titleVal,
- "libraries": libsVal
- }
- }, function (err, doc) {
- if (err) {
- // If it failed, return error
- res.send(err);
- }
- else {
- console.log(doc);
- // And forward to success page
- res.redirect("../cobit/" + updateVal);
- res.send("done");
- }
- });
- }
- });
- */
 router.put('/updatecobit/:id', function (req, res) {
     var db = req.db;
     var collection = db.get('coBits');
