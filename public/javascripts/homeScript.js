@@ -21,13 +21,14 @@ $(function () {
 
     console.log(cobit_data);
 
-    function changePreviewPage(n){
-        $("#coBitsWrapper").empty();
-        for (var i = 6*(n-1); i < 6*n; i++) {
+    var n = $("#coBitsContainer").attr("class").split("page")[1];
+
+
+    function changePreviewPage(x){
+        for (var i = x; i < 6 * (x + 1); i++) {
             var likes  = cobit_data[i].likes === undefined ? 0 : cobit_data[i].likes.length;
-            console.log(cobit_data[i].id);
             $("#coBitsWrapper").append("" +
-                "<div class='coBitPreview'>" +
+                "<div class='coBitPreview' id="+i+">" +
                 "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "/debug'></iframe>" +
                 "<a href='https://co-bit.herokuapp.com/cobit/" + cobit_data[i].id + "' class='toPreview'>"+cobit_data[i].title+"</a></br>" +
                 "<p class='previewOwner'>Made by: "+cobit_data[i].owner+"</p>" +
@@ -37,69 +38,7 @@ $(function () {
         }
     }
 
-    changePreviewPage(1);
-
-
-    function compare_likes(a,b) {
-        if (a.likes < b.likes)
-            return 1;
-        if (a.likes > b.likes)
-            return -1;
-        return 0;
-    }
-
-    function compare_date(a,b){
-        if (a.date < b.date)
-            return 1;
-        if (a.date > b.date)
-            return -1;
-        return 0;
-    }
-
-    //var date_sort = cobit_data.sort(compare_date);
-    //var likes_sort = cobit_data.sort(compare_likes);
-
-    console.log(cobit_data);
-
-    $(document.body).on("click", ".selected", function(){
-        $(".item1").toggleClass('unselected selected');
-        $(".item2").toggleClass('unselected selected');
-
-        var x = parseInt($(this).attr("class").split(" ")[0].split("item")[1]);
-
-        console.log(x);
-
-        if(x === 1){
-            $("#coBitsWrapper").empty();
-            for (var i = 0; i < 6; i++) {
-                //var likes  = likes_sort[i].likes === undefined ? 0 : likes_sort[i].likes.length;
-                $("#coBitsWrapper").append("" +
-                    "<div class='coBitPreview'>" +
-                    "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + likes_sort[i].id + "/debug'></iframe>" +
-                    "<a href='https://co-bit.herokuapp.com/cobit/" + likes_sort[i].id + "' class='toPreview'>"+likes_sort[i].title+"</a></br>" +
-                    "<p class='previewOwner'>Made by: "+likes_sort[i].owner+"</p>" +
-                    "<p class='previewLikes'>"+likes+"</p>" +
-                    "<i class='fa fa-heart previewLikeIcon' style='font-size: 15px;'></i>" +
-                    "</div>");
-            }
-        }
-
-        if(x === 2){
-            $("#coBitsWrapper").empty();
-            for (var i = 0; i < 6; i++) {
-                //var likes  = date_sort[i].likes === undefined ? 0 : date_sort[i].likes.length;
-                $("#coBitsWrapper").append("" +
-                    "<div class='coBitPreview'>" +
-                    "<iframe class='coBitPreviewFrame' src='https://co-bit.herokuapp.com/cobit/" + date_sort[i].id + "/debug'></iframe>" +
-                    "<a href='https://co-bit.herokuapp.com/cobit/" + date_sort[i].id + "' class='toPreview'>"+date_sort[i].title+"</a></br>" +
-                    "<p class='previewOwner'>Made by: "+date_sort[i].owner+"</p>" +
-                    "<p class='previewLikes'>"+likes+"</p>" +
-                    "<i class='fa fa-heart previewLikeIcon' style='font-size: 15px;'></i>" +
-                    "</div>");
-            }
-        }
-    });
-
+    changePreviewPage(n);
 
     $("#headerButtonCoBits").on("click", function () {
         $("#homeHeader").animate({scrollLeft: $(window).width()}, 800);
@@ -111,9 +50,12 @@ $(function () {
 
     $(".coBitPreviewFrame").hover(function () {
         console.log("dit werkt");
-        $(this).parent().append("<div class='previewOverlay'></div>");
+        $(this).parent().append("<div class='previewOverlay'></div>")
         $(".previewOverlay").addClass("animated fadeIn");
     }, function(){
-        $(".previewOverlay").remove();
+        $(".previewOverlay").addClass("animated fadeOut");
+        setTimeout(function(){
+            $(".previewOverlay").remove();
+        }, 300);
     });
 });

@@ -5,8 +5,10 @@
 }
 
 #coBitFrame{
-    width: 1000px;
-    height: 800px;
-    margin-top: 100px;
+    margin: 0 auto;
+    width: 70vw;
+    height: 40vh;
+    margin-top: 51px;
+    border: none;
 }
 
