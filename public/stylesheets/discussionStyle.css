@@ -1,14 +1,27 @@
+body{
+    background: #191919;
+}
+
 #title {
     font-family: 'Quicksand', sans-serif;
     font-size: 40px !important;
     float: left !important;
 }
 
+
 #coBitFrame{
-    margin: 0 auto;
-    width: 70vw;
-    height: 40vh;
-    margin-top: 51px;
     border: none;
+    display: block;
+    margin: 0 auto;
+    width: 100vw;
+    height: 45vw;
+    margin-top: 53px;
 }
 
+#coBitTitle{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 35px;
+    color: #dbdbdb;
+    display: block;
+    
+}

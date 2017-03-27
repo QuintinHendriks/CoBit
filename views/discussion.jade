@@ -12,12 +12,13 @@ html(lang="en")
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     body
         #topWrapper
-            a(href='../' id='toHome')
+            a(href='../../../' id='toHome')
                 i(class='fa fa-code' style='color: lightgrey; font-size:50px; height:30px; float:left;' aria-hidden="true")
-                #title CoBit
-            a(href='../login' id='toLogin')
+            a(href='../#{coBitData._id}' id='toOriginal')    
+                #title #{coBitData.title}
+            a(href='../../login' id='toLogin')
                 button#loginButtonUser.topButton Login
-            a(href='../cobit/new' id='toNewCoBit')
+            a(href='../../cobit/new' id='toNewCoBit')
                 button#newCoBitButton.topButton + New CoBit
         #coBitFront
             iframe#coBitFrame(src="https://co-bit.herokuapp.com/cobit/#{coBitData._id}/debug")
